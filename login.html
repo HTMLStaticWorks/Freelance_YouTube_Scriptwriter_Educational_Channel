@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | ScriptFlow</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-obsidian">
+
+    <div class="vh-100 d-flex align-items-center justify-content-center">
+        <div class="container" style="max-width: 450px;">
+            <div class="text-center mb-5">
+                <a href="index.html" class="brand-logo-wrap text-decoration-none">
+                    <img src="assets/images/logo.svg" alt="ScriptFlow Logo" width="40" height="40" class="me-2">
+                    <span class="text-cyan h2 mb-0 fw-bold">ScriptFlow</span>
+                </a>
+                <p class="opacity-50 mt-2">CLIENT COLLABORATION HUB</p>
+            </div>
+            
+            <div class="scriptflow-card">
+                <form action="dashboard.html">
+                    <div class="mb-4">
+                        <label class="form-label text-cyan small fw-bold">CLIENT ID</label>
+                        <input type="text" class="form-control bg-transparent border-cyan rounded-0 text-cyan" placeholder="K-12345">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label text-cyan small fw-bold">ACCESS KEY</label>
+                        <input type="password" class="form-control bg-transparent border-cyan rounded-0 text-cyan" placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="btn-scriptflow w-100">ENTER DASHBOARD</button>
+                    <div class="text-center mt-4">
+                        <a href="#" class="text-cyan small text-decoration-none opacity-50">Forgot credentials? Contact support</a>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="index.html" class="text-cyan small text-decoration-none">← BACK TO HOME</a>
+            </div>
+            <div class="text-center mt-4">
+                <button id="theme-toggle" class="btn btn-link text-cyan p-0" title="Toggle Theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

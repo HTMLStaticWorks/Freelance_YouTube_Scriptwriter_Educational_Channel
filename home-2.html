@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScriptFlow | Home 2 - Premium YouTube Scriptwriting</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Elevate your YouTube channel with engineering-grade scriptwriting. Home 2 presents our most advanced retention strategies and creator success stories.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&family=Outfit:wght@500;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .home-2-hero {
+            background: radial-gradient(circle at 80% 20%, var(--brand-cyan-muted) 0%, transparent 40%), linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85)), url('assets/images/home-2-hero.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 180px;
+            color: #ffffff;
+            /* Force white text for clarity on dark background */
+        }
+
+        .home-2-hero h1,
+        .home-2-hero p {
+            color: #ffffff !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .home-2-hero .text-outline {
+            -webkit-text-stroke: 2px var(--brand-cyan);
+            color: rgba(6, 182, 212, 0.1);
+            /* Slight cyan fill for better presence */
+            text-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+            /* Cyan glow */
+        }
+
+        .pulse-container {
+            position: relative;
+            padding: 60px;
+            background: rgba(6, 182, 212, 0.03);
+            border: 1px solid var(--brand-cyan-half);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .pulse-line {
+            width: 100%;
+            height: 200px;
+            background: url('assets/images/retention-graph.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: drop-shadow(0 0 10px var(--brand-cyan));
+            animation: pulse 4s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.02);
+            }
+        }
+
+        .factory-step {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .factory-step::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 60px;
+            bottom: -40px;
+            width: 2px;
+            background: var(--brand-cyan-muted);
+        }
+
+        .factory-step:last-child::before {
+            display: none;
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background: var(--brand-cyan);
+            color: var(--brand-obsidian);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--brand-cyan);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar-scriptflow scrolled">
+        <div class="container-custom d-flex justify-content-between align-items-center">
+            <a href="index.html" class="brand-logo-wrap text-decoration-none">
+                <img src="assets/images/logo.svg" alt="ScriptFlow Logo" width="40" height="40" class="me-2">
+                <span class="text-cyan h4 mb-0 fw-bold">ScriptFlow</span>
+            </a>
+
+            <div class="d-none d-lg-flex align-items-center">
+                <a href="index.html" class="nav-link-scriptflow">Home</a>
+                <a href="home-2.html" class="nav-link-scriptflow active">Home 2</a>
+                <a href="services.html" class="nav-link-scriptflow">Services</a>
+                <a href="portfolio.html" class="nav-link-scriptflow">Portfolio</a>
+                <a href="blog.html" class="nav-link-scriptflow">Blog</a>
+                <a href="contact.html" class="nav-link-scriptflow">Contact</a>
+            </div>
+
+            <div class="d-flex align-items-center">
+                <button class="theme-toggle-btn btn btn-link text-cyan p-0 me-3" title="Toggle Theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                    </svg>
+                </button>
+                <button class="rtl-toggle-btn btn btn-link text-cyan p-0 me-4" title="Toggle RTL">
+                    <span class="fw-bold small">RTL</span>
+                </button>
+                <a href="login.html" class="btn-scriptflow">DASHBOARD</a>
+                <button class="hamburger-toggle" aria-label="Toggle Navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="home-2-hero">
+        <div class="container-custom">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-3 fw-bold mb-4 reveal-on-scroll">THE <span class="text-outline">FUTURE</span> OF
+                        <br>EDUCATIONAL CONTENT
+                    </h1>
+                    <p class="lead mb-5 opacity-75 reveal-on-scroll" style="transition-delay: 0.2s;">We don't just write
+                        scripts. We engineer psychological triggers that keep viewers glued to the screen from second
+                        zero to the final frame.</p>
+                    <div class="d-flex gap-4 reveal-on-scroll" style="transition-delay: 0.4s;">
+                        <a href="#pulse" class="btn-scriptflow">SEE THE DATA</a>
+                        <a href="portfolio.html" class="btn-scriptflow-outline">LATEST WORK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Data Pulse Section -->
+    <section id="pulse" class="section-padding">
+        <div class="container-custom">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 reveal-on-scroll">
+                    <h2 class="display-4 mb-4">LIVE RETENTION <br>PULSE</h2>
+                    <p class="opacity-75 mb-4">Our scripts consistently outperform industry averages by 40%+. We use
+                        real-time analytics from our network of 500+ channels to refine our storytelling models every
+                        single week.</p>
+                    <div class="scriptflow-card mb-4">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="h2 text-cyan mb-0">87.4%</div>
+                                <p class="small opacity-50 text-uppercase mb-0">Avg. Hook Retention</p>
+                            </div>
+                            <div class="col-6 border-start border-cyan-half">
+                                <div class="h2 text-cyan mb-0">52:12</div>
+                                <p class="small opacity-50 text-uppercase mb-0">Avg. Watch Time</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal-on-scroll" style="transition-delay: 0.3s;">
+                    <div class="pulse-container">
+                        <div class="pulse-line"></div>
+                        <div class="mt-4 text-center">
+                            <span class="badge bg-cyan text-obsidian px-3 py-2">LIVE METRICS TRACKED</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Script Factory -->
+    <section class="section-padding bg-obsidian-dark border-top border-cyan-half">
+        <div class="container-custom">
+            <div class="text-center mb-5 reveal-on-scroll">
+                <h2 class="display-3">THE SCRIPT FACTORY</h2>
+                <p class="text-cyan opacity-75">A modular approach to storytelling perfection.</p>
+            </div>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8">
+                    <div class="factory-step reveal-on-scroll">
+                        <div class="step-number">01</div>
+                        <div>
+                            <h3 class="h4">NEURAL MAPPING</h3>
+                            <p class="opacity-75">We identify the core curiosity gap in your topic and map out the
+                                psychological journey the viewer needs to take.</p>
+                        </div>
+                    </div>
+
+                    <div class="factory-step reveal-on-scroll" style="transition-delay: 0.1s;">
+                        <div class="step-number">02</div>
+                        <div>
+                            <h3 class="h4">HOOK ARCHITECTURE</h3>
+                            <p class="opacity-75">Our team writes 20+ variations of the opening 30 seconds, testing for
+                                maximum impact and retention potential.</p>
+                        </div>
+                    </div>
+
+                    <div class="factory-step reveal-on-scroll" style="transition-delay: 0.2s;">
+                        <div class="step-number">03</div>
+                        <div>
+                            <h3 class="h4">STORYFLOW DRAFTING</h3>
+                            <p class="opacity-75">The script is written using our proprietary 'Retention Loops' method,
+                                ensuring no segment lasts longer than 45 seconds without a reset.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="section-padding">
+        <div class="container-custom">
+            <div class="text-center mb-5 reveal-on-scroll">
+                <h2 class="display-4">CREATOR SUCCESS</h2>
+                <p class="text-cyan opacity-75">The faces behind the millions of views.</p>
+            </div>
+
+            <div class="row g-4 mt-4">
+                <div class="col-md-4 reveal-on-scroll">
+                    <div class="scriptflow-card h-100 text-center">
+                        <img src="assets/images/creator-1.png" alt="Creator" class="testimonial-img">
+                        <h4 class="mb-2">ALEX RIVERA</h4>
+                        <p class="text-cyan small mb-3">Science Explainer (2M Subs)</p>
+                        <p class="fst-italic opacity-75">"ScriptFlow changed how I think about content. My retention
+                            shot up from 35% to 62% in one month."</p>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal-on-scroll" style="transition-delay: 0.1s;">
+                    <div class="scriptflow-card h-100 text-center">
+                        <img src="assets/images/creator-1.png" alt="Creator" class="testimonial-img"
+                            style="filter: hue-rotate(45deg);">
+                        <h4 class="mb-2">SARAH CHEN</h4>
+                        <p class="text-cyan small mb-3">Tech Reviews (850k Subs)</p>
+                        <p class="fst-italic opacity-75">"The hooks they write are legendary. I've never seen
+                            click-through rates like this before."</p>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="scriptflow-card h-100 text-center">
+                        <img src="assets/images/creator-1.png" alt="Creator" class="testimonial-img"
+                            style="filter: grayscale(1);">
+                        <h4 class="mb-2">MARCUS VANE</h4>
+                        <p class="text-cyan small mb-3">History Channel (4.2M Subs)</p>
+                        <p class="fst-italic opacity-75">"Finally, a scriptwriting agency that understands the depth
+                            required for high-end documentaries."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section border-top border-cyan-half">
+        <div class="container-custom">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="brand-logo-wrap mb-4">
+                        <img src="assets/images/logo.svg" alt="ScriptFlow Logo" width="40" height="40" class="me-2">
+                        <span class="text-cyan h5 mb-0 fw-bold">ScriptFlow</span>
+                    </div>
+                    <p class="mb-4">The world's leading scriptwriting agency for educational creators who demand
+                        precision and performance.</p>
+                </div>
+                <div class="col-lg-2 col-6 mb-4 mb-lg-0 ms-lg-auto">
+                    <h5 class="text-uppercase small fw-bold">PAGES</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="nav-link-scriptflow p-0 m-0 small">Home</a></li>
+                        <li class="mb-2"><a href="home-2.html" class="nav-link-scriptflow p-0 m-0 small">Home 2</a></li>
+                        <li class="mb-2"><a href="services.html" class="nav-link-scriptflow p-0 m-0 small">Services</a>
+                        </li>
+                        <li class="mb-2"><a href="portfolio.html"
+                                class="nav-link-scriptflow p-0 m-0 small">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="text-uppercase small fw-bold">NEWSLETTER</h5>
+                    <div class="d-flex mb-3">
+                        <input type="email"
+                            class="form-control bg-transparent border-cyan-half rounded-0 text-cyan me-2 small"
+                            placeholder="Your Email">
+                        <button class="btn-scriptflow py-2 px-3 small" style="min-width: 60px;">GO</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 pt-4 border-top border-cyan-half text-center opacity-40">
+                <p class="small mb-0">&copy; 2026 ScriptFlow. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Off-canvas Mobile Menu -->
+    <div class="offcanvas-sf">
+        <nav class="offcanvas-nav-sf">
+            <a href="index.html" class="nav-link-scriptflow">Home</a>
+            <a href="home-2.html" class="nav-link-scriptflow active">Home 2</a>
+            <a href="services.html" class="nav-link-scriptflow">Services</a>
+            <a href="portfolio.html" class="nav-link-scriptflow">Portfolio</a>
+            <a href="blog.html" class="nav-link-scriptflow">Blog</a>
+            <a href="contact.html" class="nav-link-scriptflow">Contact</a>
+
+            <div class="offcanvas-actions-sf mt-4 d-flex flex-column align-items-center gap-3 w-100 px-4">
+                <a href="login.html" class="btn-scriptflow w-100 text-center">DASHBOARD</a>
+                <div class="d-flex gap-3">
+                    <button class="theme-toggle-btn btn btn-link text-cyan p-0" title="Toggle Theme">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                        </svg>
+                    </button>
+                    <button class="rtl-toggle-btn btn btn-link text-cyan p-0" title="Toggle RTL">
+                        <span class="fw-bold small">RTL</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="offcanvas-backdrop-sf"></div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
