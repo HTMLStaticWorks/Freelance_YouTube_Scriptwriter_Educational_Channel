@@ -42,17 +42,18 @@
             </div>
 
             <div class="d-flex align-items-center">
-                <button class="theme-toggle-btn btn btn-link text-cyan p-0 me-3" title="Toggle Theme">
+                <button class="theme-toggle-btn btn btn-link text-cyan p-0 me-2" title="Toggle Theme">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                         viewBox="0 0 16 16">
                         <path
                             d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
                     </svg>
                 </button>
-                <button class="rtl-toggle-btn btn btn-link text-cyan p-0 me-4" title="Toggle RTL">
+                <button class="rtl-toggle-btn btn btn-link text-cyan p-0 me-2" title="Toggle RTL">
                     <span class="fw-bold small">RTL</span>
                 </button>
-                <a href="login.html" class="btn-scriptflow">DASHBOARD</a>
+                <a href="login.html" class="btn-scriptflow me-2">LOGIN</a>
+                <a href="dashboard.html" class="btn-scriptflow">DASHBOARD</a>
                 <button class="hamburger-toggle" aria-label="Toggle Navigation">
                     <span></span>
                     <span></span>
@@ -79,9 +80,21 @@
                         <h5 class="text-cyan text-uppercase">Email</h5>
                         <p class="h4">hello@ScriptFlow-scripts.com</p>
                     </div>
-                    <div>
+                    <div class="mb-4">
+                        <h5 class="text-cyan text-uppercase">Phone</h5>
+                        <p class="h4">+1 (555) 123-4567</p>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="text-cyan text-uppercase">Location</h5>
+                        <p class="h4">Creative District, NY</p>
+                    </div>
+                    <div class="mb-4">
                         <h5 class="text-cyan text-uppercase">Twitter / X</h5>
                         <p class="h4">@ScriptFlowScripts</p>
+                    </div>
+                    <div>
+                        <h5 class="text-cyan text-uppercase">Instagram</h5>
+                        <p class="h4">@ScriptFlow.Official</p>
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -115,7 +128,65 @@
                 </div>
             </div>
         </div>
-    </header>
+    </section>
+    
+    <!-- Map Section -->
+    <section class="map-section section-padding pt-0">
+        <div class="container-custom">
+            <div class="scriptflow-card p-0 overflow-hidden" style="height: 450px;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1715316000000!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; filter: invert(90%) hue-rotate(180deg) brightness(0.8) contrast(1.2);" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section section-padding border-top border-cyan-half">
+        <div class="container-custom">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h2 class="display-5 mb-0">FREQUENTLY ASKED <span class="text-cyan text-outline">QUESTIONS</span></h2>
+                </div>
+                <div class="col-lg-6">
+                    <p class="lead opacity-75 mb-0">Everything you need to know about our high-fidelity scriptwriting process.</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="scriptflow-card h-100">
+                        <h4 class="text-cyan mb-3">01. WHAT IS YOUR TYPICAL TURNAROUND TIME?</h4>
+                        <p class="mb-0">For most educational scripts (10-15 minutes), our turnaround is 48-72 hours. High-fidelity research pieces may take up to 5 days.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="scriptflow-card h-100">
+                        <h4 class="text-cyan mb-3">02. DO YOU HANDLE RESEARCH?</h4>
+                        <p class="mb-0">Yes. We pride ourselves on academic-level research. Every script includes a source sheet to ensure your content is factually bulletproof.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="scriptflow-card h-100">
+                        <h4 class="text-cyan mb-3">03. CAN YOU MATCH MY CHANNEL'S VOICE?</h4>
+                        <p class="mb-0">Absolutely. We analyze your last 10 videos to build a custom "Tone Profile" before writing a single word of your script.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="scriptflow-card h-100">
+                        <h4 class="text-cyan mb-3">04. DO YOU PROVIDE REVISIONS?</h4>
+                        <p class="mb-0">Every project includes 2 rounds of revisions. We work until the pacing and narrative flow perfectly align with your vision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer-section border-top border-cyan-half">
@@ -209,9 +280,9 @@
             <a href="portfolio.html" class="nav-link-scriptflow">Portfolio</a>
             <a href="blog.html" class="nav-link-scriptflow">Blog</a>
             <a href="contact.html" class="nav-link-scriptflow active">Contact</a>
-
             <div class="offcanvas-actions-sf mt-4 d-flex flex-column align-items-center gap-3 w-100 px-4">
-                <a href="login.html" class="btn-scriptflow w-100 text-center">DASHBOARD</a>
+                <a href="login.html" class="btn-scriptflow w-100 text-center">LOGIN</a>
+                <a href="dashboard.html" class="btn-scriptflow w-100 text-center">DASHBOARD</a>
                 <div class="d-flex gap-3">
                     <button class="theme-toggle-btn btn btn-link text-cyan p-0" title="Toggle Theme">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"

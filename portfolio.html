@@ -42,17 +42,18 @@
             </div>
 
             <div class="d-flex align-items-center">
-                <button class="theme-toggle-btn btn btn-link text-cyan p-0 me-3" title="Toggle Theme">
+                <button class="theme-toggle-btn btn btn-link text-cyan p-0 me-2" title="Toggle Theme">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                         viewBox="0 0 16 16">
                         <path
                             d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
                     </svg>
                 </button>
-                <button class="rtl-toggle-btn btn btn-link text-cyan p-0 me-4" title="Toggle RTL">
+                <button class="rtl-toggle-btn btn btn-link text-cyan p-0 me-2" title="Toggle RTL">
                     <span class="fw-bold small">RTL</span>
                 </button>
-                <a href="login.html" class="btn-scriptflow">DASHBOARD</a>
+                <a href="login.html" class="btn-scriptflow me-2">LOGIN</a>
+                <a href="dashboard.html" class="btn-scriptflow">DASHBOARD</a>
                 <button class="hamburger-toggle" aria-label="Toggle Navigation">
                     <span></span>
                     <span></span>
@@ -72,11 +73,11 @@
     </header>
 
     <!-- Portfolio Grid -->
-    <section class="section-padding pt-0">
+    <section class="section-padding">
         <div class="container-custom">
             <div class="row g-4">
                 <div class="col-md-6">
-                    <a href="portfolio-details.html" class="text-decoration-none">
+                    <a href="portfolio-details.html?id=space" class="text-decoration-none">
                         <div class="scriptflow-card p-0">
                             <div class="bg-cyan-muted p-5 text-center">
                                 <h3 class="h2 mb-0">THE HIDDEN COST OF SPACE</h3>
@@ -93,7 +94,7 @@
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <a href="portfolio-details.html" class="text-decoration-none">
+                    <a href="portfolio-details.html?id=rome" class="text-decoration-none">
                         <div class="scriptflow-card p-0">
                             <div class="bg-cyan-muted p-5 text-center">
                                 <h2 class="h2 mb-0">WHY ROME FELL (REVISITED)</h2>
@@ -109,7 +110,7 @@
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <a href="portfolio-details.html" class="text-decoration-none">
+                    <a href="portfolio-details.html?id=quantum" class="text-decoration-none">
                         <div class="scriptflow-card p-0">
                             <div class="bg-cyan-muted p-5 text-center">
                                 <h2 class="h2 mb-0">QUANTUM PHYSICS 101</h2>
@@ -125,7 +126,7 @@
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <a href="portfolio-details.html" class="text-decoration-none">
+                    <a href="portfolio-details.html?id=luck" class="text-decoration-none">
                         <div class="scriptflow-card p-0">
                             <div class="bg-cyan-muted p-5 text-center">
                                 <h2 class="h2 mb-0">THE MATH OF LUCK</h2>
@@ -202,6 +203,91 @@
         </div>
     </section>
 
+    <!-- The Narrative Engine -->
+    <section class="section-padding bg-obsidian border-bottom border-cyan-half">
+        <div class="container-custom">
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="scriptflow-card p-0">
+                        <div class="card-image-wrap" style="height: 400px; margin: 0;">
+                            <img src="assets/images/research_engine.png" alt="Research Engine Visualization">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-5">
+                    <h2 class="display-4">THE NARRATIVE ENGINE</h2>
+                    <p class="lead text-cyan mb-4">Behind every viral script is a high-octane research process that
+                        transforms raw data into compelling narratives.</p>
+                    <div class="row g-4 mt-2">
+                        <div class="col-md-6">
+                            <h4 class="h5 text-cyan">DEEP RESEARCH</h4>
+                            <p class="small opacity-75">We dive into academic journals, historical archives, and data
+                                sets to find the 'hidden' story.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="h5 text-cyan">FACT-CHECKING</h4>
+                            <p class="small opacity-75">Every claim is triple-verified for accuracy, ensuring your
+                                credibility remains bulletproof.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="h5 text-cyan">STORY ARCING</h4>
+                            <p class="small opacity-75">We structure information using advanced narrative frameworks to
+                                keep viewers hooked from start to finish.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="h5 text-cyan">DIALECTIC FLOW</h4>
+                            <p class="small opacity-75">Scripts are polished for natural speech, making complex topics
+                                feel like a conversation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Niche Dominance Showcase -->
+    <section class="section-padding">
+        <div class="container-custom">
+            <div class="text-center mb-5">
+                <h2 class="display-4">NICHE DOMINANCE</h2>
+                <p class="lead opacity-75 mx-auto" style="max-width: 600px;">Specialized expertise across the most
+                    demanding educational verticals on YouTube.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="scriptflow-card">
+                        <div class="card-image-wrap">
+                            <img src="assets/images/space_niche.png" alt="Space Niche">
+                        </div>
+                        <h3 class="h4 mt-3">ASTROPHYSICS & SPACE</h3>
+                        <p class="small opacity-75 mb-0">From orbital mechanics to galactic evolution, we make the
+                            cosmos accessible.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="scriptflow-card">
+                        <div class="card-image-wrap">
+                            <img src="assets/images/science_niche.png" alt="Science Niche">
+                        </div>
+                        <h3 class="h4 mt-3">HARD SCIENCE & TECH</h3>
+                        <p class="small opacity-75 mb-0">Breaking down quantum mechanics, biotechnology and engineering
+                            marvels.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="scriptflow-card">
+                        <div class="card-image-wrap">
+                            <img src="assets/images/math_niche.png" alt="Math Niche">
+                        </div>
+                        <h3 class="h4 mt-3">MATHEMATICAL THEORY</h3>
+                        <p class="small opacity-75 mb-0">Visualizing abstract concepts and proof-based narratives that
+                            drive curiosity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Dashboard CTA -->
     <section class="section-padding">
         <div class="container-custom text-center">
@@ -209,7 +295,7 @@
                 <h2 class="display-5 mb-4">COLLABORATE IN REAL-TIME</h2>
                 <p class="lead mb-5 opacity-75">All clients get access to our custom Collaboration Dashboard to track
                     scripts, approve fact-checking, and manage content calendars.</p>
-                <a href="login.html" class="btn-scriptflow">EXPLORE THE DASHBOARD</a>
+                <a href="login.html" class="btn-scriptflow">CLIENT LOGIN HUB</a>
             </div>
         </div>
     </section>
@@ -306,9 +392,9 @@
             <a href="portfolio.html" class="nav-link-scriptflow active">Portfolio</a>
             <a href="blog.html" class="nav-link-scriptflow">Blog</a>
             <a href="contact.html" class="nav-link-scriptflow">Contact</a>
-
             <div class="offcanvas-actions-sf mt-4 d-flex flex-column align-items-center gap-3 w-100 px-4">
-                <a href="login.html" class="btn-scriptflow w-100 text-center">DASHBOARD</a>
+                <a href="login.html" class="btn-scriptflow w-100 text-center">LOGIN</a>
+                <a href="dashboard.html" class="btn-scriptflow w-100 text-center">DASHBOARD</a>
                 <div class="d-flex gap-3">
                     <button class="theme-toggle-btn btn btn-link text-cyan p-0" title="Toggle Theme">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"

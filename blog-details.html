@@ -42,17 +42,18 @@
             </div>
 
             <div class="d-flex align-items-center">
-                <button class="theme-toggle-btn btn btn-link text-cyan p-0 me-3" title="Toggle Theme">
+                <button class="theme-toggle-btn btn btn-link text-cyan p-0 me-2" title="Toggle Theme">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                         viewBox="0 0 16 16">
                         <path
                             d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
                     </svg>
                 </button>
-                <button class="rtl-toggle-btn btn btn-link text-cyan p-0 me-4" title="Toggle RTL">
+                <button class="rtl-toggle-btn btn btn-link text-cyan p-0 me-2" title="Toggle RTL">
                     <span class="fw-bold small">RTL</span>
                 </button>
-                <a href="login.html" class="btn-scriptflow">DASHBOARD</a>
+                <a href="login.html" class="btn-scriptflow me-2">LOGIN</a>
+                <a href="dashboard.html" class="btn-scriptflow">DASHBOARD</a>
                 <button class="hamburger-toggle" aria-label="Toggle Navigation">
                     <span></span>
                     <span></span>
@@ -64,9 +65,10 @@
 
     <!-- Blog Hero -->
     <header class="inner-page-header">
+        <img src="assets/images/science_niche.png" alt="YouTube Hook" class="hero-bg-overlay">
         <div class="container-custom">
-            <span class="text-cyan small fw-bold mb-3 d-block">STRATEGY • MARCH 12, 2024</span>
-            <h1 class="display-3 mb-4">THE PSYCHOLOGY OF THE 15-SECOND HOOK</h1>
+            <span class="text-cyan small fw-bold mb-3 d-block reveal">STRATEGY <span class="blog-meta-sep"></span> MARCH 12, 2024</span>
+            <h1 class="display-3 mb-4 reveal">THE PSYCHOLOGY OF THE 15-SECOND HOOK</h1>
         </div>
     </header>
 
@@ -74,29 +76,71 @@
     <article class="section-padding">
         <div class="container-custom">
             <div class="max-width-800 mx-auto">
-                <p class="lead opacity-75 mb-5">On YouTube, you don't compete with other creators. You compete with the
+                <div class="details-image-card reveal">
+                    <img src="assets/images/science_niche.png" alt="Strategic Storytelling">
+                </div>
+
+                <p class="lead text-cyan mb-5 reveal">On YouTube, you don't compete with other creators. You compete with the
                     'Close' button. Here is how we ensure the viewer never clicks it.</p>
 
-                <h3 class="text-cyan mb-4">1. THE OPEN LOOP</h3>
-                <p class="opacity-75 mb-5">Humans have a biological need for closure. By presenting a problem or a
+                <h3 class="text-cyan mb-4 reveal">1. THE OPEN LOOP</h3>
+                <p class="opacity-75 mb-5 reveal">Humans have a biological need for closure. By presenting a problem or a
                     mystery in the first 5 seconds and withholding the solution until the end, you create an "open loop"
                     in the viewer's brain. They literally cannot look away until that loop is closed.</p>
 
-                <div class="scriptflow-card mb-5">
+                <div class="scriptflow-card mb-5 reveal">
                     <h4 class="text-cyan mb-3">EXAMPLE:</h4>
                     <p class="fst-italic">"This is the most dangerous bridge in the world. But not for the reason you
                         think."</p>
                 </div>
 
-                <h3 class="text-cyan mb-4">2. VISUAL CONTRAST</h3>
-                <p class="opacity-75 mb-5">The hook isn't just about words. It's about the dissonance between what the
+                <h3 class="text-cyan mb-4 reveal">2. VISUAL CONTRAST</h3>
+                <p class="opacity-75 mb-5 reveal">The hook isn't just about words. It's about the dissonance between what the
                     viewer sees and what they hear. If the script says "This is a quiet village" while showing a chaotic
                     scene, the brain pauses to resolve the conflict. That pause is all you need.</p>
 
-                <h3 class="text-cyan mb-4">3. THE VALUE PROMISE</h3>
-                <p class="opacity-75 mb-5">By the 15-second mark, the viewer must know exactly what they will gain by
-                    watching. This is the "Payoff Promise". If you break this promise, your retention graph will crater
-                    at the 2-minute mark.</p>
+                <div class="row align-items-center mb-5 reveal">
+                    <div class="col-md-7">
+                        <h3 class="text-cyan mb-4">3. THE VALUE PROMISE</h3>
+                        <p class="opacity-75 mb-0">By the 15-second mark, the viewer must know exactly what they will gain by
+                            watching. This is the "Payoff Promise". If you break this promise, your retention graph will crater
+                            at the 2-minute mark.</p>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="details-image-card mb-0">
+                            <img src="assets/images/retention-graph.png" alt="Retention Graph">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="retention-box mb-5 reveal">
+                    <h4 class="text-cyan mb-3">PRO TIP:</h4>
+                    <p class="mb-0 opacity-75">Always script your hook <em>after</em> the rest of the video is finished. You can't promise what you haven't yet proven.</p>
+                </div>
+
+                <hr class="border-cyan-half my-5">
+
+                <div class="reveal">
+                    <h4 class="text-cyan mb-4">MORE INSIGHTS</h4>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <a href="blog-details.html?id=journey" class="text-decoration-none">
+                                <div class="scriptflow-card p-3">
+                                    <h5 class="small text-cyan mb-2">NARRATIVE</h5>
+                                    <p class="small mb-0">Beyond the Hero's Journey: YouTube Edition</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="blog-details.html?id=retention" class="text-decoration-none">
+                                <div class="scriptflow-card p-3">
+                                    <h5 class="small text-cyan mb-2">ANALYTICS</h5>
+                                    <p class="small mb-0">Decoding the Retention Graph</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </article>
@@ -193,9 +237,9 @@
             <a href="portfolio.html" class="nav-link-scriptflow">Portfolio</a>
             <a href="blog.html" class="nav-link-scriptflow active">Blog</a>
             <a href="contact.html" class="nav-link-scriptflow">Contact</a>
-
             <div class="offcanvas-actions-sf mt-4 d-flex flex-column align-items-center gap-3 w-100 px-4">
-                <a href="login.html" class="btn-scriptflow w-100 text-center">DASHBOARD</a>
+                <a href="login.html" class="btn-scriptflow w-100 text-center">LOGIN</a>
+                <a href="dashboard.html" class="btn-scriptflow w-100 text-center">DASHBOARD</a>
                 <div class="d-flex gap-3">
                     <button class="theme-toggle-btn btn btn-link text-cyan p-0" title="Toggle Theme">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -216,6 +260,8 @@
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/details-loader.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 

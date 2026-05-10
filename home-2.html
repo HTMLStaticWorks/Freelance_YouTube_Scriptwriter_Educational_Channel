@@ -28,21 +28,34 @@
 
     <style>
         .home-2-hero {
-            background: radial-gradient(circle at 80% 20%, var(--brand-cyan-muted) 0%, transparent 40%), linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85)), url('assets/images/home-2-hero.png');
+            background-image: radial-gradient(circle at 80% 20%, var(--brand-cyan-muted) 0%, transparent 40%), linear-gradient(rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.7)), url('assets/images/home_2_hero_bg_new.png');
             background-size: cover;
             background-position: center;
             min-height: 100vh;
             display: flex;
             align-items: center;
             padding-top: 180px;
+            padding-bottom: 80px;
             color: #ffffff;
-            /* Force white text for clarity on dark background */
+            transition: var(--transition-smooth);
+        }
+
+        body.light-mode .home-2-hero {
+            background-image: linear-gradient(rgba(248, 250, 252, 0.9), rgba(248, 250, 252, 0.9)), url('assets/images/home_2_hero_bg_new.png');
+            background-color: var(--bg-main);
+            color: var(--text-main);
         }
 
         .home-2-hero h1,
         .home-2-hero p {
-            color: #ffffff !important;
+            color: #ffffff;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        body.light-mode .home-2-hero h1,
+        body.light-mode .home-2-hero p {
+            color: var(--text-main) !important;
+            text-shadow: none;
         }
 
         .home-2-hero .text-outline {
@@ -153,17 +166,18 @@
             </div>
 
             <div class="d-flex align-items-center">
-                <button class="theme-toggle-btn btn btn-link text-cyan p-0 me-3" title="Toggle Theme">
+                <button class="theme-toggle-btn btn btn-link text-cyan p-0 me-2" title="Toggle Theme">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                         viewBox="0 0 16 16">
                         <path
                             d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
                     </svg>
                 </button>
-                <button class="rtl-toggle-btn btn btn-link text-cyan p-0 me-4" title="Toggle RTL">
+                <button class="rtl-toggle-btn btn btn-link text-cyan p-0 me-2" title="Toggle RTL">
                     <span class="fw-bold small">RTL</span>
                 </button>
-                <a href="login.html" class="btn-scriptflow">DASHBOARD</a>
+                <a href="login.html" class="btn-scriptflow me-2">LOGIN</a>
+                <a href="dashboard.html" class="btn-scriptflow">DASHBOARD</a>
                 <button class="hamburger-toggle" aria-label="Toggle Navigation">
                     <span></span>
                     <span></span>
@@ -181,7 +195,7 @@
                     <h1 class="display-3 fw-bold mb-4 reveal-on-scroll">THE <span class="text-outline">FUTURE</span> OF
                         <br>EDUCATIONAL CONTENT
                     </h1>
-                    <p class="lead mb-5 opacity-75 reveal-on-scroll" style="transition-delay: 0.2s;">We don't just write
+                    <p class="lead mb-3 opacity-75 reveal-on-scroll" style="transition-delay: 0.2s;">We don't just write
                         scripts. We engineer psychological triggers that keep viewers glued to the screen from second
                         zero to the final frame.</p>
                     <div class="d-flex gap-4 reveal-on-scroll" style="transition-delay: 0.4s;">
@@ -197,7 +211,7 @@
     <section id="pulse" class="section-padding">
         <div class="container-custom">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0 reveal-on-scroll">
+                <div class="col-lg-6 mb-3 mb-lg-0 reveal-on-scroll">
                     <h2 class="display-4 mb-4">LIVE RETENTION <br>PULSE</h2>
                     <p class="opacity-75 mb-4">Our scripts consistently outperform industry averages by 40%+. We use
                         real-time analytics from our network of 500+ channels to refine our storytelling models every
@@ -230,7 +244,7 @@
     <!-- The Script Factory -->
     <section class="section-padding bg-obsidian-dark border-top border-cyan-half">
         <div class="container-custom">
-            <div class="text-center mb-5 reveal-on-scroll">
+            <div class="text-center mb-3 reveal-on-scroll">
                 <h2 class="display-3">THE SCRIPT FACTORY</h2>
                 <p class="text-cyan opacity-75">A modular approach to storytelling perfection.</p>
             </div>
@@ -268,10 +282,78 @@
         </div>
     </section>
 
+    <!-- NEW SECTION 1: THE RETENTION LAB -->
+    <section class="section-padding bg-obsidian-dark">
+        <div class="container-custom">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-3 mb-lg-0 reveal-on-scroll">
+                    <div class="retention-lab-viz">
+                        <div class="scan-line"></div>
+                        <img src="assets/images/retention-graph.png" alt="Graph" class="img-fluid opacity-50">
+                        <div class="mt-4">
+                            <div class="h4 mb-2">NEURAL ANALYSIS IN PROGRESS</div>
+                            <div class="progress bg-transparent border border-cyan-half rounded-0" style="height: 10px;">
+                                <div class="progress-bar bg-cyan" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5 reveal-on-scroll" style="transition-delay: 0.2s;">
+                    <h2 class="display-4 mb-4">THE RETENTION <br><span class="text-outline">LAB</span></h2>
+                    <p class="lead text-cyan mb-4">Science, not guesswork. Every script is lab-tested.</p>
+                    <p class="opacity-75 mb-4">We run every script through our proprietary AI-assisted sentiment analysis and retention prediction model. We can predict with 90% accuracy where a viewer is likely to drop off before the video even goes live.</p>
+                    <div class="d-flex gap-4">
+                        <div class="scriptflow-card p-3 flex-fill">
+                            <div class="h5 text-cyan mb-1">A/B Testing</div>
+                            <p class="small mb-0 opacity-60">Hook variation testing.</p>
+                        </div>
+                        <div class="scriptflow-card p-3 flex-fill">
+                            <div class="h5 text-cyan mb-1">Heatmapping</div>
+                            <p class="small mb-0 opacity-60">Interest curve analysis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 2: SCRIPT LIBRARY / FEATURED PRODUCTIONS -->
+    <section class="section-padding">
+        <div class="container-custom">
+            <div class="text-center mb-3 reveal-on-scroll">
+                <h2 class="display-3">PRODUCTION LIBRARY</h2>
+                <p class="text-cyan opacity-75">Recent high-performance scripts from our studio.</p>
+            </div>
+            <div class="feature-showcase-grid mt-5">
+                <div class="library-item reveal-on-scroll">
+                    <img src="assets/images/ai_revolution_work.png" alt="Work 1">
+                    <div class="library-content">
+                        <h4 class="mb-1">THE AI REVOLUTION</h4>
+                        <p class="small mb-0">15M Views • Tech Documentary</p>
+                    </div>
+                </div>
+                <div class="library-item reveal-on-scroll" style="transition-delay: 0.1s;">
+                    <img src="assets/images/science_niche.png" alt="Work 2">
+                    <div class="library-content">
+                        <h4 class="mb-1">QUANTUM DEEP DIVE</h4>
+                        <p class="small mb-0">8M Views • Science Essay</p>
+                    </div>
+                </div>
+                <div class="library-item reveal-on-scroll" style="transition-delay: 0.2s;">
+                    <img src="assets/images/math_problem_work.png" alt="Work 3">
+                    <div class="library-content">
+                        <h4 class="mb-1">THE ZERO PROBLEM</h4>
+                        <p class="small mb-0">12M Views • Math Education</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Success Stories -->
     <section class="section-padding">
         <div class="container-custom">
-            <div class="text-center mb-5 reveal-on-scroll">
+            <div class="text-center mb-3 reveal-on-scroll">
                 <h2 class="display-4">CREATOR SUCCESS</h2>
                 <p class="text-cyan opacity-75">The faces behind the millions of views.</p>
             </div>
@@ -279,7 +361,7 @@
             <div class="row g-4 mt-4">
                 <div class="col-md-4 reveal-on-scroll">
                     <div class="scriptflow-card h-100 text-center">
-                        <img src="assets/images/creator-1.png" alt="Creator" class="testimonial-img">
+                        <img src="assets/images/creator_1.png" alt="Creator" class="testimonial-img">
                         <h4 class="mb-2">ALEX RIVERA</h4>
                         <p class="text-cyan small mb-3">Science Explainer (2M Subs)</p>
                         <p class="fst-italic opacity-75">"ScriptFlow changed how I think about content. My retention
@@ -288,8 +370,7 @@
                 </div>
                 <div class="col-md-4 reveal-on-scroll" style="transition-delay: 0.1s;">
                     <div class="scriptflow-card h-100 text-center">
-                        <img src="assets/images/creator-1.png" alt="Creator" class="testimonial-img"
-                            style="filter: hue-rotate(45deg);">
+                        <img src="assets/images/creator_2.png" alt="Creator" class="testimonial-img">
                         <h4 class="mb-2">SARAH CHEN</h4>
                         <p class="text-cyan small mb-3">Tech Reviews (850k Subs)</p>
                         <p class="fst-italic opacity-75">"The hooks they write are legendary. I've never seen
@@ -298,8 +379,7 @@
                 </div>
                 <div class="col-md-4 reveal-on-scroll" style="transition-delay: 0.2s;">
                     <div class="scriptflow-card h-100 text-center">
-                        <img src="assets/images/creator-1.png" alt="Creator" class="testimonial-img"
-                            style="filter: grayscale(1);">
+                        <img src="assets/images/creator_3.png" alt="Creator" class="testimonial-img">
                         <h4 class="mb-2">MARCUS VANE</h4>
                         <p class="text-cyan small mb-3">History Channel (4.2M Subs)</p>
                         <p class="fst-italic opacity-75">"Finally, a scriptwriting agency that understands the depth
@@ -310,11 +390,62 @@
         </div>
     </section>
 
+    <!-- NEW SECTION 3: PARTNER RETAINER MODELS -->
+    <section class="section-padding bg-obsidian-dark border-top border-cyan-half">
+        <div class="container-custom">
+            <div class="text-center mb-3 reveal-on-scroll">
+                <h2 class="display-4">PARTNER RETAINERS</h2>
+                <p class="text-cyan opacity-75">Scaling your channel with predictable, elite scripting.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="retainer-card reveal-on-scroll">
+                        <h3 class="h4">STARTER</h3>
+                        <div class="retainer-price">$2.5k<span>/mo</span></div>
+                        <ul class="retainer-features">
+                            <li>2 Scripts Per Month</li>
+                            <li>Hook A/B Testing</li>
+                            <li>Primary Research Included</li>
+                            <li>1 Revision Round</li>
+                        </ul>
+                        <a href="contact.html" class="btn-scriptflow-outline w-100">CHOOSE PLAN</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="retainer-card featured reveal-on-scroll" style="transition-delay: 0.1s;">
+                        <h3 class="h4">PRO</h3>
+                        <div class="retainer-price">$4.8k<span>/mo</span></div>
+                        <ul class="retainer-features">
+                            <li>4 Scripts Per Month</li>
+                            <li>Full Retention Lab Analysis</li>
+                            <li>Thumbnail Strategy Sync</li>
+                            <li>Priority Support</li>
+                        </ul>
+                        <a href="contact.html" class="btn-scriptflow w-100">CHOOSE PLAN</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="retainer-card reveal-on-scroll" style="transition-delay: 0.2s;">
+                        <h3 class="h4">ELITE</h3>
+                        <div class="retainer-price">$9k<span>/mo</span></div>
+                        <ul class="retainer-features">
+                            <li>8 Scripts Per Month</li>
+                            <li>Direct Access to Head Writer</li>
+                            <li>Custom Content Strategy</li>
+                            <li>Unlimited Revisions</li>
+                        </ul>
+                        <a href="contact.html" class="btn-scriptflow-outline w-100">CHOOSE PLAN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer-section border-top border-cyan-half">
         <div class="container-custom">
             <div class="row">
-                <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="col-lg-4 mb-3 mb-lg-0">
                     <div class="brand-logo-wrap mb-4">
                         <img src="assets/images/logo.svg" alt="ScriptFlow Logo" width="40" height="40" class="me-2">
                         <span class="text-cyan h5 mb-0 fw-bold">ScriptFlow</span>
@@ -360,7 +491,8 @@
             <a href="contact.html" class="nav-link-scriptflow">Contact</a>
 
             <div class="offcanvas-actions-sf mt-4 d-flex flex-column align-items-center gap-3 w-100 px-4">
-                <a href="login.html" class="btn-scriptflow w-100 text-center">DASHBOARD</a>
+                <a href="login.html" class="btn-scriptflow w-100 text-center">LOGIN</a>
+                <a href="dashboard.html" class="btn-scriptflow w-100 text-center">DASHBOARD</a>
                 <div class="d-flex gap-3">
                     <button class="theme-toggle-btn btn btn-link text-cyan p-0" title="Toggle Theme">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
