@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSidebar();
     initCharts();
     initTheme();
+    initRTL();
 });
 
 /**
@@ -40,23 +41,85 @@ function initTheme() {
 }
 
 /**
- * Sidebar toggle
+ * sidebar toggle
  */
 function initSidebar() {
     const toggle = document.getElementById('sidebar-toggle');
     const sidebar = document.querySelector('.dashboard-sidebar');
+    const backdrop = document.getElementById('sidebar-backdrop');
     
     if (toggle && sidebar) {
         toggle.addEventListener('click', () => {
             sidebar.classList.toggle('active');
+            if (backdrop) backdrop.classList.toggle('active');
+            document.body.classList.toggle('sidebar-open');
+        });
+    }
+
+    if (backdrop) {
+        backdrop.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            backdrop.classList.remove('active');
+            document.body.classList.remove('sidebar-open');
         });
     }
 }
 
 /**
- * Initialize Dummy Charts
+ * Initialize Charts
  */
 function initCharts() {
-    // We'll use CSS-based charts or simple SVG updates for this UI-only dashboard
-    console.log('Dashboard UI Initialized');
+    if (typeof DashboardCharts !== 'undefined') {
+        DashboardCharts.init();
+        console.log('Dashboard Charts Initialized');
+    } else {
+        console.warn('DashboardCharts not found');
+    }
+}
+
+/**
+ * RTL Toggle Functionality
+ */
+function initRTL() {
+    const rtlToggle = document.getElementById('rtl-toggle');
+    const html = document.documentElement;
+    const bootstrapLink = document.querySelector('link[href*="bootstrap.min.css"]');
+    
+    const ltrIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>`;
+    const rtlIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6H4M20 12H4M20 18H4"/></svg>`;
+
+    function setRTL(isRTL) {
+        if (isRTL) {
+            html.setAttribute('dir', 'rtl');
+            if (bootstrapLink) {
+                bootstrapLink.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css';
+            }
+            if (rtlToggle) {
+                rtlToggle.innerHTML = `<span>LTR</span>`;
+                rtlToggle.setAttribute('title', 'Switch to LTR');
+            }
+        } else {
+            html.setAttribute('dir', 'ltr');
+            if (bootstrapLink) {
+                bootstrapLink.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css';
+            }
+            if (rtlToggle) {
+                rtlToggle.innerHTML = `<span>RTL</span>`;
+                rtlToggle.setAttribute('title', 'Switch to RTL');
+            }
+        }
+        localStorage.setItem('dashboard-rtl', isRTL ? 'true' : 'false');
+    }
+
+    // Initialize state
+    const savedRTL = localStorage.getItem('dashboard-rtl') === 'true';
+    setRTL(savedRTL);
+
+    if (rtlToggle) {
+        rtlToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const currentRTL = html.getAttribute('dir') === 'rtl';
+            setRTL(!currentRTL);
+        });
+    }
 }

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | ScriptFlow</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard_modern.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="brand-logo-wrap mb-4">
+                <img src="assets/images/logo.svg" alt="ScriptFlow Logo" width="40" height="40" class="me-2">
+                <span class="text-cyan h5 mb-0 fw-bold">ScriptFlow</span>
+            </div>
+            
+            <ul class="sidebar-nav">
+                <li><a href="dashboard.html" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>Overview</span>
+                </a></li>
+                <li><a href="dashboard-projects.html" class="sidebar-link active">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    <span>Projects</span>
+                </a></li>
+                <li><a href="dashboard-analytics.html" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    <span>Analytics</span>
+                </a></li>
+                <li><a href="dashboard-calendar.html" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>Calendar</span>
+                </a></li>
+            </ul>
+            
+            <div class="sidebar-user mt-auto">
+                <div class="user-avatar">AD</div>
+                <div class="user-info d-none d-xl-block">
+                    <p class="small fw-bold mb-0">Admin User</p>
+                    <a href="index.html" class="text-muted small text-decoration-none hover-cyan">Sign Out</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <header class="d-flex justify-content-between align-items-center mb-5">
+                <div class="header-title">
+                    <h1 class="h3 mb-0 fw-bold">PROJECT PIPELINE</h1>
+                    <p class="text-muted small mb-0 mt-2">Manage your scripts through every stage of production.</p>
+                </div>
+                <div class="header-actions d-flex align-items-center">
+                    <button id="rtl-toggle" class="btn btn-outline-cyan px-2 py-1 me-3 small fw-bold" style="font-size: 0.7rem; min-width: 45px;" title="Toggle RTL">RTL</button>
+                    <button id="theme-toggle" class="btn btn-link text-cyan p-0 me-3" title="Toggle Theme"></button>
+                    <button class="btn-scriptflow me-3" data-bs-toggle="modal" data-bs-target="#submitTopicModal">+ NEW PROJECT</button>
+                    <button id="sidebar-toggle" class="btn btn-link text-cyan d-lg-none me-2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    </button>
+                </div>
+            </header>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-xl-4">
+                    <div class="scriptflow-card h-100">
+                        <h3 class="h6 mb-4 text-cyan fw-bold text-uppercase">Pipeline Analytics</h3>
+                        <div class="chart-container-medium">
+                            <canvas id="pipelineChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-8">
+                    <div class="scriptflow-card h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h3 class="h6 mb-0 text-cyan fw-bold text-uppercase">Project Health</h3>
+                            <span class="badge bg-cyan-muted text-cyan">All Systems Nominal</span>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-sm-4">
+                                <div class="p-3 border border-cyan-half rounded-3 bg-cyan-muted-v2" style="background: rgba(6, 182, 212, 0.05);">
+                                    <p class="small text-muted mb-1">On Track</p>
+                                    <h4 class="metric-value h5 mb-0">92%</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="p-3 border border-cyan-half rounded-3 bg-cyan-muted-v2" style="background: rgba(6, 182, 212, 0.05);">
+                                    <p class="small text-muted mb-1">Avg. Cycle Time</p>
+                                    <h4 class="metric-value h5 mb-0">4.2 Days</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="p-3 border border-cyan-half rounded-3 bg-cyan-muted-v2" style="background: rgba(6, 182, 212, 0.05);">
+                                    <p class="small text-muted mb-1">Resources</p>
+                                    <h4 class="metric-value h5 mb-0">85% Cap.</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-muted small">Your team is operating at peak efficiency. 3 scripts are ahead of schedule.</p>
+                            <div class="progress" style="height: 4px;">
+                                <div class="progress-bar bg-cyan" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kanban Board -->
+            <div class="kanban-board mb-5">
+                <!-- Column 1: Researching -->
+                <div class="kanban-column">
+                    <h4 class="h6 mb-4 text-cyan fw-bold text-uppercase">Researching <span class="badge bg-cyan-muted text-cyan ms-2">2</span></h4>
+                    <div class="kanban-item">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <p class="mb-0 fw-bold small">Ancient Rome Logistics</p>
+                            <span class="badge bg-danger-subtle text-danger border border-danger" style="font-size: 0.6rem;">High</span>
+                        </div>
+                        <p class="text-muted small mb-3">Gathering primary sources on grain supply chains.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="avatars d-flex">
+                                <div class="avatar-sm bg-cyan text-obsidian rounded-circle d-flex align-items-center justify-content-center fw-bold small" style="width: 24px; height: 24px; border: 2px solid var(--bg-main);">R</div>
+                            </div>
+                            <span class="text-muted small" style="font-size: 0.7rem;">May 15</span>
+                        </div>
+                    </div>
+                    <div class="kanban-item">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <p class="mb-0 fw-bold small">Quantum Computing 101</p>
+                            <span class="badge bg-warning-subtle text-warning border border-warning" style="font-size: 0.6rem;">Medium</span>
+                        </div>
+                        <p class="text-muted small mb-3">Simplifying qubit superposition concepts.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="avatars d-flex">
+                                <div class="avatar-sm bg-cyan text-obsidian rounded-circle d-flex align-items-center justify-content-center fw-bold small" style="width: 24px; height: 24px; border: 2px solid var(--bg-main);">Q</div>
+                            </div>
+                            <span class="text-muted small" style="font-size: 0.7rem;">May 18</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Drafting -->
+                <div class="kanban-column">
+                    <h4 class="h6 mb-4 text-cyan fw-bold text-uppercase">Drafting <span class="badge bg-cyan-muted text-cyan ms-2">2</span></h4>
+                    <div class="kanban-item">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <p class="mb-0 fw-bold small">The Economics of Mars</p>
+                            <span class="badge bg-success-subtle text-success border border-success" style="font-size: 0.6rem;">Low</span>
+                        </div>
+                        <p class="text-muted small mb-3">Writing Section 3: Resource allocation models.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="avatars d-flex">
+                                <div class="avatar-sm bg-cyan text-obsidian rounded-circle d-flex align-items-center justify-content-center fw-bold small" style="width: 24px; height: 24px; border: 2px solid var(--bg-main);">M</div>
+                            </div>
+                            <span class="text-muted small" style="font-size: 0.7rem;">May 22</span>
+                        </div>
+                    </div>
+                    <div class="kanban-item">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <p class="mb-0 fw-bold small">Evolution of Language</p>
+                            <span class="badge bg-warning-subtle text-warning border border-warning" style="font-size: 0.6rem;">Medium</span>
+                        </div>
+                        <p class="text-muted small mb-3">Tracing Indo-European roots and phonetics.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="avatars d-flex">
+                                <div class="avatar-sm bg-cyan text-obsidian rounded-circle d-flex align-items-center justify-content-center fw-bold small" style="width: 24px; height: 24px; border: 2px solid var(--bg-main);">L</div>
+                            </div>
+                            <span class="text-muted small" style="font-size: 0.7rem;">May 24</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3: Reviewing -->
+                <div class="kanban-column">
+                    <h4 class="h6 mb-4 text-cyan fw-bold text-uppercase">Reviewing <span class="badge bg-cyan-muted text-cyan ms-2">2</span></h4>
+                    <div class="kanban-item">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <p class="mb-0 fw-bold small">AI vs Human Brain</p>
+                            <span class="badge bg-warning-subtle text-warning border border-warning" style="font-size: 0.6rem;">Medium</span>
+                        </div>
+                        <p class="text-muted small mb-3">Checking neuroscience terminology accuracy.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="avatars d-flex">
+                                <div class="avatar-sm bg-cyan text-obsidian rounded-circle d-flex align-items-center justify-content-center fw-bold small" style="width: 24px; height: 24px; border: 2px solid var(--bg-main);">B</div>
+                            </div>
+                            <span class="text-muted small" style="font-size: 0.7rem;">May 25</span>
+                        </div>
+                    </div>
+                    <div class="kanban-item">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <p class="mb-0 fw-bold small">Dark Matter Secrets</p>
+                            <span class="badge bg-danger-subtle text-danger border border-danger" style="font-size: 0.6rem;">High</span>
+                        </div>
+                        <p class="text-muted small mb-3">Verifying gravitational lensing calculations.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="avatars d-flex">
+                                <div class="avatar-sm bg-cyan text-obsidian rounded-circle d-flex align-items-center justify-content-center fw-bold small" style="width: 24px; height: 24px; border: 2px solid var(--bg-main);">D</div>
+                            </div>
+                            <span class="text-muted small" style="font-size: 0.7rem;">May 28</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 4: Approved -->
+                <div class="kanban-column">
+                    <h4 class="h6 mb-4 text-cyan fw-bold text-uppercase">Approved <span class="badge bg-cyan-muted text-cyan ms-2">2</span></h4>
+                    <div class="kanban-item">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <p class="mb-0 fw-bold small">The History of Coffee</p>
+                            <span class="badge bg-success text-white px-2" style="font-size: 0.6rem;">Done</span>
+                        </div>
+                        <p class="text-muted small mb-3">Final script sent to voice actor.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="avatars d-flex">
+                                <div class="avatar-sm bg-cyan text-obsidian rounded-circle d-flex align-items-center justify-content-center fw-bold small" style="width: 24px; height: 24px; border: 2px solid var(--bg-main);">C</div>
+                            </div>
+                            <span class="text-muted small" style="font-size: 0.7rem;">June 02</span>
+                        </div>
+                    </div>
+                    <div class="kanban-item">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <p class="mb-0 fw-bold small">Future of Robotics</p>
+                            <span class="badge bg-success text-white px-2" style="font-size: 0.6rem;">Done</span>
+                        </div>
+                        <p class="text-muted small mb-3">Ready for storyboard phase.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="avatars d-flex">
+                                <div class="avatar-sm bg-cyan text-obsidian rounded-circle d-flex align-items-center justify-content-center fw-bold small" style="width: 24px; height: 24px; border: 2px solid var(--bg-main);">F</div>
+                            </div>
+                            <span class="text-muted small" style="font-size: 0.7rem;">June 05</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Submit Topic Modal -->
+    <div class="modal fade" id="submitTopicModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4" style="background: var(--bg-main); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
+                <div class="modal-header border-bottom border-cyan-half p-4">
+                    <h5 class="modal-title text-cyan fw-bold">SUBMIT NEW TOPIC</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label text-cyan small fw-bold">VIDEO TITLE / CONCEPT</label>
+                            <input type="text" class="form-control bg-transparent border-cyan text-white rounded-3 py-2" placeholder="e.g. How Black Holes Warp Time">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-cyan small fw-bold">KEY LEARNING OBJECTIVES</label>
+                            <textarea class="form-control bg-transparent border-cyan text-white rounded-3" rows="3" placeholder="What should the viewer learn?"></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label text-cyan small fw-bold">TARGET DURATION</label>
+                            <select class="form-select bg-transparent border-cyan text-white rounded-3 py-2">
+                                <option value="8-12">8-12 Minutes</option>
+                                <option value="12-20">12-20 Minutes</option>
+                                <option value="20+">20+ Minutes (Documentary)</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn-scriptflow w-100 py-3 rounded-3">SUBMIT FOR RESEARCH</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/dashboard-charts.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

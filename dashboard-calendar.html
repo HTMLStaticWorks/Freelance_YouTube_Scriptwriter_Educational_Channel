@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar | ScriptFlow</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard_modern.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background: var(--glass-border);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .calendar-header-day {
+            background: var(--brand-cyan-muted);
+            padding: 1rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--brand-cyan);
+        }
+        .calendar-day {
+            background: var(--glass-bg);
+            min-height: 120px;
+            padding: 10px;
+            transition: var(--dash-transition);
+            position: relative;
+        }
+        .calendar-day:hover {
+            background: rgba(6, 182, 212, 0.05);
+        }
+        .calendar-day.today {
+            background: rgba(6, 182, 212, 0.08);
+        }
+        .calendar-day.today::before {
+            content: 'TODAY';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.6rem;
+            font-weight: 800;
+            background: var(--brand-cyan);
+            color: var(--brand-obsidian);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .calendar-event {
+            background: var(--brand-cyan-muted);
+            border-left: 3px solid var(--brand-cyan);
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            margin-bottom: 5px;
+            cursor: pointer;
+            transition: var(--dash-transition);
+        }
+        .calendar-event:hover {
+            transform: translateX(3px);
+            background: var(--brand-cyan-half);
+        }
+        .calendar-event.filming { border-left-color: #ef4444; background: rgba(239, 68, 68, 0.1); }
+        .calendar-event.editing { border-left-color: #f59e0b; background: rgba(245, 158, 11, 0.1); }
+        
+        .day-number {
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .calendar-grid { grid-template-columns: repeat(1, 1fr); }
+            .calendar-header-day { display: none; }
+            .calendar-day { min-height: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="brand-logo-wrap mb-4">
+                <img src="assets/images/logo.svg" alt="ScriptFlow Logo" width="40" height="40" class="me-2">
+                <span class="text-cyan h5 mb-0 fw-bold">ScriptFlow</span>
+            </div>
+            
+            <ul class="sidebar-nav">
+                <li><a href="dashboard.html" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>Overview</span>
+                </a></li>
+                <li><a href="dashboard-projects.html" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    <span>Projects</span>
+                </a></li>
+                <li><a href="dashboard-analytics.html" class="sidebar-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    <span>Analytics</span>
+                </a></li>
+                <li><a href="dashboard-calendar.html" class="sidebar-link active">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>Calendar</span>
+                </a></li>
+            </ul>
+            
+            <div class="sidebar-user mt-auto">
+                <div class="user-avatar">AD</div>
+                <div class="user-info d-none d-xl-block">
+                    <p class="small fw-bold mb-0">Admin User</p>
+                    <a href="index.html" class="text-muted small text-decoration-none hover-cyan">Sign Out</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <header class="d-flex justify-content-between align-items-center mb-5">
+                <div class="header-title">
+                    <h1 class="h3 mb-0 fw-bold">PRODUCTION CALENDAR</h1>
+                    <p class="text-muted small mb-0 mt-2">Schedule your content pipeline and manage release dates.</p>
+                </div>
+                <div class="header-actions d-flex align-items-center">
+                    <button id="rtl-toggle" class="btn btn-outline-cyan px-2 py-1 me-3 small fw-bold" style="font-size: 0.7rem; min-width: 45px;" title="Toggle RTL">RTL</button>
+                    <button id="theme-toggle" class="btn btn-link text-cyan p-0 me-3" title="Toggle Theme"></button>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-cyan px-3 small fw-bold text-uppercase">&lt;</button>
+                        <button class="btn btn-outline-cyan px-3 small fw-bold text-uppercase">May 2026</button>
+                        <button class="btn btn-outline-cyan px-3 small fw-bold text-uppercase">&gt;</button>
+                    </div>
+                    <button id="sidebar-toggle" class="btn btn-link text-cyan d-lg-none me-2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    </button>
+                </div>
+            </header>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-xl-9">
+                    <div class="calendar-grid">
+                        <!-- Days Headers -->
+                        <div class="calendar-header-day">Mon</div>
+                        <div class="calendar-header-day">Tue</div>
+                        <div class="calendar-header-day">Wed</div>
+                        <div class="calendar-header-day">Thu</div>
+                        <div class="calendar-header-day">Fri</div>
+                        <div class="calendar-header-day">Sat</div>
+                        <div class="calendar-header-day">Sun</div>
+
+                        <!-- Row 1 -->
+                        <div class="calendar-day"><span class="day-number">27</span></div>
+                        <div class="calendar-day"><span class="day-number">28</span></div>
+                        <div class="calendar-day"><span class="day-number">29</span></div>
+                        <div class="calendar-day"><span class="day-number">30</span></div>
+                        <div class="calendar-day"><span class="day-number">01</span></div>
+                        <div class="calendar-day"><span class="day-number">02</span></div>
+                        <div class="calendar-day"><span class="day-number">03</span></div>
+
+                        <!-- Row 2 -->
+                        <div class="calendar-day"><span class="day-number">04</span></div>
+                        <div class="calendar-day"><span class="day-number">05</span>
+                            <div class="calendar-event filming">Research: Rome Part 1</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">06</span></div>
+                        <div class="calendar-day"><span class="day-number">07</span></div>
+                        <div class="calendar-day"><span class="day-number">08</span>
+                            <div class="calendar-event editing">Draft: Mars Economics</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">09</span></div>
+                        <div class="calendar-day"><span class="day-number">10</span></div>
+
+                        <!-- Row 3 -->
+                        <div class="calendar-day today"><span class="day-number">11</span></div>
+                        <div class="calendar-day"><span class="day-number">12</span></div>
+                        <div class="calendar-day"><span class="day-number">13</span></div>
+                        <div class="calendar-day"><span class="day-number">14</span></div>
+                        <div class="calendar-day"><span class="day-number">15</span>
+                            <div class="calendar-event">PUBLISH: Why Rome Fell</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">16</span></div>
+                        <div class="calendar-day"><span class="day-number">17</span></div>
+
+                        <!-- Row 4 -->
+                        <div class="calendar-day"><span class="day-number">18</span></div>
+                        <div class="calendar-day"><span class="day-number">19</span>
+                            <div class="calendar-event filming">Record: Quantum 101</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">20</span></div>
+                        <div class="calendar-day"><span class="day-number">21</span></div>
+                        <div class="calendar-day"><span class="day-number">22</span>
+                            <div class="calendar-event">PUBLISH: Mars Econ</div>
+                        </div>
+                        <div class="calendar-day"><span class="day-number">23</span></div>
+                        <div class="calendar-day"><span class="day-number">24</span></div>
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="scriptflow-card mb-4">
+                        <h3 class="h6 mb-3 text-cyan fw-bold text-uppercase">Monthly Goal</h3>
+                        <div class="d-flex align-items-end gap-2 mb-3">
+                            <h2 class="metric-value mb-0">12/15</h2>
+                            <span class="text-muted small pb-1">Scripts</span>
+                        </div>
+                        <div class="progress mb-3" style="height: 8px;">
+                            <div class="progress-bar bg-cyan" style="width: 80%;"></div>
+                        </div>
+                        <p class="text-muted small mb-0">3 more scripts to reach May target.</p>
+                    </div>
+                    
+                    <div class="scriptflow-card">
+                        <h3 class="h6 mb-3 text-cyan fw-bold text-uppercase">Status Legend</h3>
+                        <div class="d-flex flex-column gap-2">
+                            <div class="d-flex align-items-center gap-2 small">
+                                <span class="bg-danger rounded-circle" style="width: 10px; height: 10px;"></span> Filming/Recording
+                            </div>
+                            <div class="d-flex align-items-center gap-2 small">
+                                <span class="bg-warning rounded-circle" style="width: 10px; height: 10px;"></span> Drafting/Editing
+                            </div>
+                            <div class="d-flex align-items-center gap-2 small">
+                                <span class="bg-cyan rounded-circle" style="width: 10px; height: 10px;"></span> Published
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/dashboard-charts.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

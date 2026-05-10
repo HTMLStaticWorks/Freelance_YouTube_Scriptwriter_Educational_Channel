@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics | ScriptFlow</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard_modern.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="brand-logo-wrap mb-4">
+                <img src="assets/images/logo.svg" alt="ScriptFlow Logo" width="40" height="40" class="me-2">
+                <span class="text-cyan h5 mb-0 fw-bold">ScriptFlow</span>
+            </div>
+
+            <ul class="sidebar-nav">
+                <li><a href="dashboard.html" class="sidebar-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                        <span>Overview</span>
+                    </a></li>
+                <li><a href="dashboard-projects.html" class="sidebar-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                            </path>
+                        </svg>
+                        <span>Projects</span>
+                    </a></li>
+                <li><a href="dashboard-analytics.html" class="sidebar-link active">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                        <span>Analytics</span>
+                    </a></li>
+                <li><a href="dashboard-calendar.html" class="sidebar-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span>Calendar</span>
+                    </a></li>
+            </ul>
+
+            <div class="sidebar-user mt-auto">
+                <div class="user-avatar">AD</div>
+                <div class="user-info d-none d-xl-block">
+                    <p class="small fw-bold mb-0">Admin User</p>
+                    <a href="index.html" class="text-muted small text-decoration-none hover-cyan">Sign Out</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <header class="d-flex justify-content-between align-items-center mb-5">
+                <div class="header-title">
+                    <h1 class="h3 mb-0 fw-bold">PERFORMANCE ANALYTICS</h1>
+                    <p class="text-muted small mb-0 mt-2">Deep dive into retention metrics and audience engagement.</p>
+                </div>
+                <div class="header-actions d-flex align-items-center">
+                    <button id="rtl-toggle" class="btn btn-outline-cyan px-2 py-1 me-3 small fw-bold" style="font-size: 0.7rem; min-width: 45px;" title="Toggle RTL">RTL</button>
+                    <button id="theme-toggle" class="btn btn-link text-cyan p-0 me-3" title="Toggle Theme"></button>
+                    <div class="dropdown me-3">
+                        <button class="btn btn-outline-cyan dropdown-toggle px-3 small fw-bold text-uppercase"
+                            type="button" data-bs-toggle="dropdown">Last 30 Days</button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#">Last 7 Days</a></li>
+                            <li><a class="dropdown-item" href="#">Last 90 Days</a></li>
+                            <li><a class="dropdown-item" href="#">All Time</a></li>
+                        </ul>
+                    </div>
+                    <button id="sidebar-toggle" class="btn btn-link text-cyan d-lg-none me-2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Retention Analytics (Featured) -->
+            <div class="row g-4 mb-5">
+                <div class="col-12">
+                    <div class="scriptflow-card">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <h3 class="h6 mb-1 text-cyan fw-bold text-uppercase">Audience Retention</h3>
+                                <p class="text-muted small mb-0">Average retention across all videos this month</p>
+                            </div>
+                            <div class="text-end">
+                                <h2 class="metric-value mb-0">74.8%</h2>
+                                <span class="trend-up small fw-bold">+5.2% vs last month</span>
+                            </div>
+                        </div>
+                        <div class="chart-container-large">
+                            <canvas id="retentionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <!-- Mini Stats (Horizontal) -->
+                <div class="col-12">
+                    <div class="scriptflow-card">
+                        <div class="row g-4">
+                            <div class="col-md-4 border-md-end">
+                                <div class="p-2">
+                                    <p class="small text-uppercase opacity-75 mb-2">Watch Time (Total)</p>
+                                    <h2 class="metric-value mb-1">12.5K <span class="h6 text-muted">Hrs</span></h2>
+                                    <div class="trend-up small fw-bold">+12% vs prev. month</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 border-md-end">
+                                <div class="p-2">
+                                    <p class="small text-uppercase opacity-75 mb-2">Click-Through Rate</p>
+                                    <h2 class="metric-value mb-1">9.2%</h2>
+                                    <div class="trend-up small fw-bold">+2.1% vs prev. month</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-2">
+                                    <p class="small text-uppercase opacity-75 mb-2">Unique Viewers</p>
+                                    <h2 class="metric-value mb-1">840K</h2>
+                                    <div class="trend-down small fw-bold">-1.5% vs prev. month</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Topic Performance -->
+                <div class="col-lg-4">
+                    <div class="scriptflow-card h-100">
+                        <h3 class="h6 mb-4 text-cyan fw-bold text-uppercase">Avg Watch Time by Topic</h3>
+                        <div class="chart-container-medium">
+                            <canvas id="topicChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- Traffic Sources (Pie Chart) -->
+                <div class="col-lg-4">
+                    <div class="scriptflow-card h-100">
+                        <h3 class="h6 mb-4 text-cyan fw-bold text-uppercase">Traffic Sources</h3>
+                        <div class="chart-container-medium">
+                            <canvas id="trafficPieChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- Retention vs Industry -->
+                <div class="col-lg-4">
+                    <div class="scriptflow-card h-100">
+                        <h3 class="h6 mb-4 text-cyan fw-bold text-uppercase">Metric Comparison</h3>
+                        <div class="chart-container-medium">
+                            <canvas id="comparisonChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/dashboard-charts.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>
