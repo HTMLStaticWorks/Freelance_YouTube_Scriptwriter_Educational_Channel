@@ -41,7 +41,7 @@
         }
 
         body.light-mode .home-2-hero {
-            background-image: linear-gradient(rgba(248, 250, 252, 0.9), rgba(248, 250, 252, 0.9)), url('assets/images/home_2_hero_bg_new.png');
+            background-image: linear-gradient(rgba(248, 250, 252, 0.35), rgba(248, 250, 252, 0.35)), url('assets/images/home_2_hero_bg_new.png');
             background-color: var(--bg-main);
             color: var(--text-main);
         }
@@ -60,6 +60,11 @@
             margin-right: auto;
         }
 
+        .home-2-hero .container-custom {
+            position: relative;
+            z-index: 10;
+        }
+
         @media (min-width: 992px) {
             .home-2-hero .hero-subtitle {
                 margin-left: 0;
@@ -68,7 +73,7 @@
 
         .hero-image-wrap {
             position: relative;
-            z-index: 5;
+            z-index: 20;
             transform: perspective(1000px) rotateY(-10deg);
             transition: var(--transition-smooth);
         }
@@ -95,14 +100,14 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to right, var(--bg-main) 60%, transparent 100%);
+            background: linear-gradient(to right, var(--bg-main) 35%, transparent 100%);
             z-index: 1;
-            opacity: 0.8;
+            opacity: 0.6;
         }
 
         body.light-mode .home-2-hero::after {
-            background: linear-gradient(to right, var(--bg-main) 70%, transparent 100%);
-            opacity: 0.9;
+            background: linear-gradient(to right, var(--bg-main) 40%, transparent 100%);
+            opacity: 0.7;
         }
 
         .home-2-hero .text-outline {
@@ -180,6 +185,10 @@
             font-weight: 800;
             flex-shrink: 0;
             z-index: 1;
+        }
+
+        body.light-mode .step-number {
+            color: #ffffff;
         }
 
         .testimonial-img {
@@ -424,7 +433,7 @@
                             <p class="small mb-0 opacity-60">Hook variation testing.</p>
                         </div>
                         <div class="scriptflow-card p-3 flex-fill">
-                            <div class="h5 text-cyan mb-1">Heatmapping</div>
+                            <div class="h5 text-cyan mb-1">Heat Mapping</div>
                             <p class="small mb-0 opacity-60">Interest curve analysis.</p>
                         </div>
                     </div>
@@ -615,8 +624,10 @@
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="index.html" class="nav-link-scriptflow p-0 m-0 small">Home</a></li>
                         <li class="mb-2"><a href="about.html" class="nav-link-scriptflow p-0 m-0 small">About</a></li>
-                        <li class="mb-2"><a href="services.html" class="nav-link-scriptflow p-0 m-0 small">Services</a></li>
-                        <li class="mb-2"><a href="contact.html" class="nav-link-scriptflow p-0 m-0 small">Contact</a></li>
+                        <li class="mb-2"><a href="services.html" class="nav-link-scriptflow p-0 m-0 small">Services</a>
+                        </li>
+                        <li class="mb-2"><a href="contact.html" class="nav-link-scriptflow p-0 m-0 small">Contact</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-6 mb-4 mb-lg-0">
@@ -684,7 +695,8 @@
     <!-- Back to Top Button -->
     <button class="back-to-top" aria-label="Back to top">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+            <path fill-rule="evenodd"
+                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
         </svg>
     </button>
 </body>

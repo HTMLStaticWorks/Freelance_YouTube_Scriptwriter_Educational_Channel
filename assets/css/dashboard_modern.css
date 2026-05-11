@@ -112,6 +112,29 @@ body.light-mode {
     gap: 12px;
 }
 
+.btn-signout {
+    display: inline-block;
+    background: rgba(239, 68, 68, 0.05);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: #ef4444 !important;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--dash-transition);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.btn-signout:hover {
+    background: #ef4444;
+    color: white !important;
+    border-color: #ef4444;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+    transform: translateY(-1px);
+}
+
 .user-avatar {
     width: 40px;
     height: 40px;
@@ -335,14 +358,20 @@ header h1::after {
     }
 
     header {
-        flex-direction: column !important;
-        align-items: flex-start !important;
+        flex-direction: column-reverse !important;
+        align-items: center !important;
         gap: 1.5rem;
         width: 100%;
     }
 
     .header-title {
         width: 100%;
+        text-align: center;
+    }
+
+    .header-title h1::after {
+        left: 50% !important;
+        transform: translateX(-50%);
     }
 
     .header-actions {
@@ -352,6 +381,11 @@ header h1::after {
         align-items: center;
         flex-wrap: nowrap;
         gap: 0.4rem;
+        border: 1px solid var(--glass-border);
+        padding: 0.6rem 1rem;
+        border-radius: 16px;
+        background: var(--glass-bg);
+        backdrop-filter: blur(var(--glass-blur));
     }
 
     .header-actions > * {
@@ -360,27 +394,35 @@ header h1::after {
     }
 
     .header-actions .btn {
-        padding-left: 0.5rem !important;
-        padding-right: 0.5rem !important;
-        font-size: 0.7rem !important;
+        padding-left: 0.4rem !important;
+        padding-right: 0.4rem !important;
+        font-size: 0.65rem !important;
         min-width: 0 !important;
-        height: 34px !important;
+        height: 32px !important;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         white-space: nowrap;
     }
 
+    .header-actions .btn-scriptflow {
+        min-width: 55px !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+
     .header-actions #rtl-toggle,
     .header-actions #theme-toggle {
-        width: 34px !important;
-        min-width: 34px !important;
+        width: 32px !important;
+        min-width: 32px !important;
         padding: 0 !important;
     }
 
     .header-actions #sidebar-toggle {
         padding: 0 !important;
-        margin-inline-start: auto !important;
+        order: -1 !important;
+        margin-inline-end: auto !important;
+        margin-inline-start: 0 !important;
         min-width: 34px !important;
     }
 
