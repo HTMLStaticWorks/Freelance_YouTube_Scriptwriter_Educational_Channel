@@ -352,6 +352,7 @@ header h1::after {
 
     .dashboard-content {
         padding: 1.5rem;
+        padding-top: 6.5rem !important;
         width: 100%;
         max-width: 100vw;
         overflow-x: hidden;
@@ -375,17 +376,24 @@ header h1::after {
     }
 
     .header-actions {
-        width: 100%;
+        position: fixed;
+        top: 0.75rem;
+        left: 1.5rem;
+        right: 1.5rem;
+        width: calc(100% - 3rem);
+        z-index: 1045;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-wrap: nowrap;
         gap: 0.4rem;
-        border: 1px solid var(--glass-border);
+        border: 1px solid var(--brand-cyan-half);
         padding: 0.6rem 1rem;
         border-radius: 16px;
         background: var(--glass-bg);
         backdrop-filter: blur(var(--glass-blur));
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+        margin: 0 !important;
     }
 
     .header-actions > * {

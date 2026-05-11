@@ -161,12 +161,7 @@
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
     <script>
-        // RTL Toggle functionality
-        document.getElementById('rtl-toggle').addEventListener('click', () => {
-            const html = document.documentElement;
-            const currentDir = html.getAttribute('dir');
-            html.setAttribute('dir', currentDir === 'rtl' ? 'ltr' : 'rtl');
-        });
+
 
         // Password visibility toggle
         document.querySelectorAll('.password-toggle').forEach(button => {

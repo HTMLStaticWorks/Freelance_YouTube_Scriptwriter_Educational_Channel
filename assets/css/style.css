@@ -49,9 +49,9 @@ body.light-mode .opacity-75 { opacity: 0.9 !important; }
 body.light-mode .opacity-50 { opacity: 0.8 !important; }
 body.light-mode .opacity-40 { opacity: 0.7 !important; }
 /* Force dark text in light mode for common elements */
-body.light-mode p:not(.text-cyan), 
-body.light-mode span:not(.text-cyan):not(.badge), 
-body.light-mode li:not(.text-cyan),
+body.light-mode p:not(.text-cyan):not(.bg-obsidian *), 
+body.light-mode span:not(.text-cyan):not(.badge):not(.bg-obsidian *), 
+body.light-mode li:not(.text-cyan):not(.bg-obsidian *),
 body.light-mode .scriptflow-card p,
 body.light-mode .hero-subtitle {
     color: var(--text-main) !important;
@@ -59,6 +59,39 @@ body.light-mode .hero-subtitle {
 
 body.light-mode .text-cyan {
     color: var(--brand-cyan) !important;
+}
+
+/* Fix visibility in dark sections when in light mode */
+body.light-mode .bg-obsidian,
+body.light-mode .bg-obsidian h1,
+body.light-mode .bg-obsidian h2,
+body.light-mode .bg-obsidian h3,
+body.light-mode .bg-obsidian h4,
+body.light-mode .bg-obsidian h5,
+body.light-mode .bg-obsidian h6,
+body.light-mode .bg-obsidian p,
+body.light-mode .bg-obsidian span,
+body.light-mode .bg-obsidian li,
+body.light-mode .bg-obsidian div:not(.scriptflow-card):not(.scriptflow-card *) {
+    color: #ffffff !important;
+}
+
+/* Re-fix cards inside dark sections - they should have dark text because they turn white */
+body.light-mode .bg-obsidian .scriptflow-card h1,
+body.light-mode .bg-obsidian .scriptflow-card h2,
+body.light-mode .bg-obsidian .scriptflow-card h3,
+body.light-mode .bg-obsidian .scriptflow-card h4,
+body.light-mode .bg-obsidian .scriptflow-card h5,
+body.light-mode .bg-obsidian .scriptflow-card h6,
+body.light-mode .bg-obsidian .scriptflow-card p,
+body.light-mode .bg-obsidian .scriptflow-card span,
+body.light-mode .bg-obsidian .scriptflow-card li,
+body.light-mode .bg-obsidian .scriptflow-card small {
+    color: var(--text-main) !important;
+}
+
+body.light-mode .bg-obsidian .text-cyan {
+    color: #06B6D4 !important; /* Restore vibrant cyan on dark backgrounds */
 }
 
 body.light-mode .opacity-75 { opacity: 1 !important; }
@@ -387,6 +420,19 @@ body.light-mode .hero-title {
 body.light-mode .hero-subtitle {
     text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9);
     font-weight: 500;
+}
+
+body.light-mode .hero .btn-scriptflow-outline,
+body.light-mode .home-2-hero .btn-scriptflow-outline {
+    background-color: #ffffff;
+    color: var(--brand-cyan);
+    border-color: var(--brand-cyan);
+}
+
+body.light-mode .hero .btn-scriptflow-outline:hover,
+body.light-mode .home-2-hero .btn-scriptflow-outline:hover {
+    background-color: var(--brand-cyan);
+    color: #ffffff;
 }
 
 .hero::after {
@@ -780,6 +826,17 @@ body.light-mode .bg-cyan .text-obsidian {
 
 [dir="rtl"] .text-end {
     text-align: left !important;
+}
+
+[dir="rtl"] .form-check {
+    padding-left: 0 !important;
+    padding-right: 1.5em !important;
+}
+
+[dir="rtl"] .form-check .form-check-input {
+    float: right !important;
+    margin-right: -1.5em !important;
+    margin-left: 0 !important;
 }
 
 @media (min-width: 992px) {
@@ -1460,8 +1517,8 @@ body.light-mode .map-section iframe {
     border-bottom: 1px solid var(--brand-cyan-half);
 }
 
-.auth-divider:not(:empty)::before { margin-right: 15px; }
-.auth-divider:not(:empty)::after { margin-left: 15px; }
+.auth-divider:not(:empty)::before { margin-inline-end: 15px; }
+.auth-divider:not(:empty)::after { margin-inline-start: 15px; }
 
 .auth-footer-link {
     display: block;
@@ -1519,6 +1576,10 @@ body.light-mode .map-section iframe {
 
 .password-field-group {
     position: relative;
+}
+
+.password-input {
+    padding-inline-end: 45px !important;
 }
 
 .password-toggle {
