@@ -35,6 +35,7 @@
             <div class="d-none d-lg-flex align-items-center">
                 <a href="index.html" class="nav-link-scriptflow">Home</a>
                 <a href="home-2.html" class="nav-link-scriptflow">Home 2</a>
+                <a href="about.html" class="nav-link-scriptflow">About</a>
                 <a href="services.html" class="nav-link-scriptflow">Services</a>
                 <a href="portfolio.html" class="nav-link-scriptflow">Portfolio</a>
                 <a href="blog.html" class="nav-link-scriptflow">Blog</a>
@@ -74,27 +75,33 @@
     <!-- Contact Content -->
     <section class="section-padding">
         <div class="container-custom">
+            <div class="text-center mb-5 pb-3">
+                <h2 class="display-5 mb-0">CONTACT <span class="text-cyan text-outline">INFORMATION</span></h2>
+                <p class="lead opacity-75 mt-2 mb-0">Send us a message and we'll get back to you shortly.</p>
+            </div>
             <div class="row g-5">
-                <div class="col-lg-5">
-                    <div class="mb-4">
-                        <h5 class="text-cyan text-uppercase">Email</h5>
-                        <p class="h4">hello@ScriptFlow-scripts.com</p>
-                    </div>
-                    <div class="mb-4">
-                        <h5 class="text-cyan text-uppercase">Phone</h5>
-                        <p class="h4">+1 (555) 123-4567</p>
-                    </div>
-                    <div class="mb-4">
-                        <h5 class="text-cyan text-uppercase">Location</h5>
-                        <p class="h4">Creative District, NY</p>
-                    </div>
-                    <div class="mb-4">
-                        <h5 class="text-cyan text-uppercase">Twitter / X</h5>
-                        <p class="h4">@ScriptFlowScripts</p>
-                    </div>
-                    <div>
-                        <h5 class="text-cyan text-uppercase">Instagram</h5>
-                        <p class="h4">@ScriptFlow.Official</p>
+                <div class="col-lg-5 d-flex flex-column align-items-center align-items-lg-start">
+                    <div class="text-start">
+                        <div class="mb-4">
+                            <h5 class="text-cyan text-uppercase">Email</h5>
+                            <p class="h4">hello@ScriptFlow-scripts.com</p>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="text-cyan text-uppercase">Phone</h5>
+                            <p class="h4">+1 (555) 123-4567</p>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="text-cyan text-uppercase">Location</h5>
+                            <p class="h4">Creative District, NY</p>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="text-cyan text-uppercase">Twitter / X</h5>
+                            <p class="h4">@ScriptFlowScripts</p>
+                        </div>
+                        <div class="mb-4 mb-lg-0">
+                            <h5 class="text-cyan text-uppercase">Instagram</h5>
+                            <p class="h4">@ScriptFlow.Official</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -159,29 +166,56 @@
                 </div>
             </div>
             
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="scriptflow-card h-100">
-                        <h4 class="text-cyan mb-3">01. WHAT IS YOUR TYPICAL TURNAROUND TIME?</h4>
-                        <p class="mb-0">For most educational scripts (10-15 minutes), our turnaround is 48-72 hours. High-fidelity research pieces may take up to 5 days.</p>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item bg-transparent border-cyan-half mb-4 scriptflow-card p-0" style="border-radius: 0;">
+                    <h4 class="accordion-header" id="headingOne" style="margin: 0;">
+                        <button class="accordion-button bg-transparent text-cyan collapsed shadow-none p-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="font-size: 1.1rem; border: none; font-weight: 700;">
+                            01. WHAT IS YOUR TYPICAL TURNAROUND TIME?
+                        </button>
+                    </h4>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body p-4 pt-0 text-white" style="opacity: 0.8;">
+                            <p class="mb-0">For most educational scripts (10-15 minutes), our turnaround is 48-72 hours. High-fidelity research pieces may take up to 5 days.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="scriptflow-card h-100">
-                        <h4 class="text-cyan mb-3">02. DO YOU HANDLE RESEARCH?</h4>
-                        <p class="mb-0">Yes. We pride ourselves on academic-level research. Every script includes a source sheet to ensure your content is factually bulletproof.</p>
+                
+                <div class="accordion-item bg-transparent border-cyan-half mb-4 scriptflow-card p-0" style="border-radius: 0;">
+                    <h4 class="accordion-header" id="headingTwo" style="margin: 0;">
+                        <button class="accordion-button bg-transparent text-cyan collapsed shadow-none p-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="font-size: 1.1rem; border: none; font-weight: 700;">
+                            02. DO YOU HANDLE RESEARCH?
+                        </button>
+                    </h4>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body p-4 pt-0 text-white" style="opacity: 0.8;">
+                            <p class="mb-0">Yes. We pride ourselves on academic-level research. Every script includes a source sheet to ensure your content is factually bulletproof.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="scriptflow-card h-100">
-                        <h4 class="text-cyan mb-3">03. CAN YOU MATCH MY CHANNEL'S VOICE?</h4>
-                        <p class="mb-0">Absolutely. We analyze your last 10 videos to build a custom "Tone Profile" before writing a single word of your script.</p>
+                
+                <div class="accordion-item bg-transparent border-cyan-half mb-4 scriptflow-card p-0" style="border-radius: 0;">
+                    <h4 class="accordion-header" id="headingThree" style="margin: 0;">
+                        <button class="accordion-button bg-transparent text-cyan collapsed shadow-none p-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="font-size: 1.1rem; border: none; font-weight: 700;">
+                            03. CAN YOU MATCH MY CHANNEL'S VOICE?
+                        </button>
+                    </h4>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body p-4 pt-0 text-white" style="opacity: 0.8;">
+                            <p class="mb-0">Absolutely. We analyze your last 10 videos to build a custom "Tone Profile" before writing a single word of your script.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="scriptflow-card h-100">
-                        <h4 class="text-cyan mb-3">04. DO YOU PROVIDE REVISIONS?</h4>
-                        <p class="mb-0">Every project includes 2 rounds of revisions. We work until the pacing and narrative flow perfectly align with your vision.</p>
+                
+                <div class="accordion-item bg-transparent border-cyan-half mb-0 scriptflow-card p-0" style="border-radius: 0;">
+                    <h4 class="accordion-header" id="headingFour" style="margin: 0;">
+                        <button class="accordion-button bg-transparent text-cyan collapsed shadow-none p-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="font-size: 1.1rem; border: none; font-weight: 700;">
+                            04. DO YOU PROVIDE REVISIONS?
+                        </button>
+                    </h4>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body p-4 pt-0 text-white" style="opacity: 0.8;">
+                            <p class="mb-0">Every project includes 2 rounds of revisions. We work until the pacing and narrative flow perfectly align with your vision.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -192,10 +226,10 @@
     <footer class="footer-section border-top border-cyan-half">
         <div class="container-custom">
             <div class="row">
-                <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="col-lg-4 mb-4 mb-lg-0">
                     <div class="brand-logo-wrap mb-4">
                         <img src="assets/images/logo.svg" alt="ScriptFlow Logo" width="40" height="40" class="me-2">
-                        <span class="text-cyan h5 mb-0 fw-bold">ScriptFlow</span>
+                        <span class="text-cyan h4 mb-0 fw-bold">ScriptFlow</span>
                     </div>
                     <p class="mb-4">The world's leading scriptwriting agency for educational creators who demand
                         precision and performance.</p>
@@ -238,20 +272,17 @@
                     <h5 class="text-uppercase small fw-bold">PAGES</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="index.html" class="nav-link-scriptflow p-0 m-0 small">Home</a></li>
-                        <li class="mb-2"><a href="home-2.html" class="nav-link-scriptflow p-0 m-0 small">Home 2</a></li>
-                        <li class="mb-2"><a href="services.html" class="nav-link-scriptflow p-0 m-0 small">Services</a>
-                        </li>
-                        <li class="mb-2"><a href="portfolio.html"
-                                class="nav-link-scriptflow p-0 m-0 small">Portfolio</a></li>
-                        <li class="mb-2"><a href="contact.html" class="nav-link-scriptflow p-0 m-0 small">Contact</a>
-                        </li>
+                        <li class="mb-2"><a href="about.html" class="nav-link-scriptflow p-0 m-0 small">About</a></li>
+                        <li class="mb-2"><a href="services.html" class="nav-link-scriptflow p-0 m-0 small">Services</a></li>
+                        <li class="mb-2"><a href="contact.html" class="nav-link-scriptflow p-0 m-0 small">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-6 mb-4 mb-lg-0">
                     <h5 class="text-uppercase small fw-bold">LEGAL</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="nav-link-scriptflow p-0 m-0 small">Privacy</a></li>
-                        <li class="mb-2"><a href="#" class="nav-link-scriptflow p-0 m-0 small">Terms</a></li>
+                        <li class="mb-2"><a href="#" class="nav-link-scriptflow p-0 m-0 small">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="nav-link-scriptflow p-0 m-0 small">Terms of Service</a></li>
+                        <li class="mb-2"><a href="#" class="nav-link-scriptflow p-0 m-0 small">Cookie Policy</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3">
@@ -273,9 +304,11 @@
 
     <!-- Off-canvas Mobile Menu -->
     <div class="offcanvas-sf">
+        <button class="offcanvas-close-sf" aria-label="Close Menu">&times;</button>
         <nav class="offcanvas-nav-sf">
             <a href="index.html" class="nav-link-scriptflow">Home</a>
             <a href="home-2.html" class="nav-link-scriptflow">Home 2</a>
+            <a href="about.html" class="nav-link-scriptflow">About</a>
             <a href="services.html" class="nav-link-scriptflow">Services</a>
             <a href="portfolio.html" class="nav-link-scriptflow">Portfolio</a>
             <a href="blog.html" class="nav-link-scriptflow">Blog</a>
@@ -304,6 +337,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+        </svg>
+    </button>
 </body>
 
 </html>

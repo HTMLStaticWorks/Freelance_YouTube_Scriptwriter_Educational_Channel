@@ -30,10 +30,10 @@
     <div class="dashboard-layout">
         <!-- Sidebar -->
         <aside class="dashboard-sidebar">
-            <div class="brand-logo-wrap mb-4">
+            <a href="index.html" class="brand-logo-wrap mb-4 text-decoration-none">
                 <img src="assets/images/logo.svg" alt="ScriptFlow Logo" width="40" height="40" class="me-2">
                 <span class="text-cyan h5 mb-0 fw-bold">ScriptFlow</span>
-            </div>
+            </a>
             
             <ul class="sidebar-nav">
                 <li><a href="dashboard.html" class="sidebar-link active">
@@ -56,7 +56,7 @@
             
             <div class="sidebar-user mt-auto">
                 <div class="user-avatar">AD</div>
-                <div class="user-info d-none d-xl-block">
+                <div class="user-info">
                     <p class="small fw-bold mb-0">Admin User</p>
                     <a href="index.html" class="text-muted small text-decoration-none hover-cyan">Sign Out</a>
                 </div>
@@ -73,7 +73,7 @@
                 <div class="header-actions d-flex align-items-center">
                     <button id="rtl-toggle" class="btn btn-outline-cyan px-2 py-1 me-3 small fw-bold" style="font-size: 0.7rem; min-width: 45px;" title="Toggle RTL">RTL</button>
                     <button id="theme-toggle" class="btn btn-link text-cyan p-0 me-3" title="Toggle Theme"></button>
-                    <button class="btn-scriptflow me-3" data-bs-toggle="modal" data-bs-target="#submitTopicModal">+ SUBMIT TOPIC</button>
+                    <button class="btn-scriptflow me-3" data-bs-toggle="modal" data-bs-target="#submitTopicModal">SUBMIT</button>
                     <button id="sidebar-toggle" class="btn btn-link text-cyan d-lg-none me-2">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
                     </button>
@@ -285,5 +285,12 @@
     <!-- Custom JS -->
     <script src="assets/js/dashboard-charts.js"></script>
     <script src="assets/js/dashboard.js"></script>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+        </svg>
+    </button>
 </body>
 </html>

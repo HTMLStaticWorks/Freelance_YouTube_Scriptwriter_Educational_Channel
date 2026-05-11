@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up | ScriptFlow</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
     <!-- Icons SVG -->
     <svg style="display:none">
         <symbol id="icon-google" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-            <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-            <path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
-            <path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            <path fill="currentColor"
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+            <path fill="currentColor"
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+            <path fill="currentColor"
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" />
+            <path fill="currentColor"
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
         </symbol>
         <symbol id="icon-apple" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M17.05 20.28c-.98.95-2.05 1.72-3.23 1.72-1.15 0-1.55-.71-2.91-.71-1.37 0-1.83.69-2.91.71-1.15.02-2.31-.83-3.32-1.84-2.06-2.06-3.14-5.83-3.14-8.86 0-4.66 2.89-7.14 5.67-7.14 1.47 0 2.31.85 3.32.85 1.02 0 1.55-.85 3.33-.85 1.25 0 2.45.42 3.31 1.15-2.75 1.56-2.31 5.34.42 6.46-.62 1.48-1.44 2.94-2.54 4.51zM12.03 5.01c-.02-2.14 1.76-3.99 3.86-4.01.21 2.51-2.26 4.38-3.86 4.01z"/>
+            <path fill="currentColor"
+                d="M17.05 20.28c-.98.95-2.05 1.72-3.23 1.72-1.15 0-1.55-.71-2.91-.71-1.37 0-1.83.69-2.91.71-1.15.02-2.31-.83-3.32-1.84-2.06-2.06-3.14-5.83-3.14-8.86 0-4.66 2.89-7.14 5.67-7.14 1.47 0 2.31.85 3.32.85 1.02 0 1.55-.85 3.33-.85 1.25 0 2.45.42 3.31 1.15-2.75 1.56-2.31 5.34.42 6.46-.62 1.48-1.44 2.94-2.54 4.51zM12.03 5.01c-.02-2.14 1.76-3.99 3.86-4.01.21 2.51-2.26 4.38-3.86 4.01z" />
         </symbol>
         <symbol id="icon-eye" viewBox="0 0 24 24">
-            <path fill="none" stroke="currentColor" stroke-width="2" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3" fill="currentColor"/>
+            <path fill="none" stroke="currentColor" stroke-width="2" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+            <circle cx="12" cy="12" r="3" fill="currentColor" />
         </symbol>
         <symbol id="icon-eye-off" viewBox="0 0 24 24">
-            <path fill="none" stroke="currentColor" stroke-width="2" d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="2"/>
+            <path fill="none" stroke="currentColor" stroke-width="2"
+                d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
+            <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="2" />
         </symbol>
     </svg>
 
@@ -45,7 +56,8 @@
         <div class="auth-controls-top">
             <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Theme">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                    <path
+                        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
                 </svg>
             </button>
             <button id="rtl-toggle" class="rtl-toggle-btn" title="Toggle RTL">
@@ -66,57 +78,77 @@
 
             <div class="auth-social-btns">
                 <a href="#" class="btn-social">
-                    <svg><use xlink:href="#icon-google"></use></svg>
+                    <svg>
+                        <use xlink:href="#icon-google"></use>
+                    </svg>
                     Google
                 </a>
                 <a href="#" class="btn-social">
-                    <svg><use xlink:href="#icon-apple"></use></svg>
+                    <svg>
+                        <use xlink:href="#icon-apple"></use>
+                    </svg>
                     Apple
                 </a>
             </div>
 
             <div class="auth-divider">Or use credentials</div>
-            
+
             <form action="dashboard.html">
                 <div class="mb-3">
                     <label class="form-label text-cyan small fw-bold">FULL NAME</label>
-                    <input type="text" class="form-control bg-transparent border-cyan-half rounded-0 text-cyan py-3" placeholder="John Doe" required>
+                    <input type="text" class="form-control bg-transparent border-cyan-half rounded-0 text-cyan py-3"
+                        placeholder="John Doe" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label text-cyan small fw-bold">EMAIL ADDRESS</label>
-                    <input type="email" class="form-control bg-transparent border-cyan-half rounded-0 text-cyan py-3" placeholder="john@example.com" required>
+                    <input type="email" class="form-control bg-transparent border-cyan-half rounded-0 text-cyan py-3"
+                        placeholder="john@example.com" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label text-cyan small fw-bold">ACCESS KEY</label>
                     <div class="password-field-group">
-                        <input type="password" id="access-key" class="form-control bg-transparent border-cyan-half rounded-0 text-cyan py-3 password-input" placeholder="••••••••" required>
+                        <input type="password" id="access-key"
+                            class="form-control bg-transparent border-cyan-half rounded-0 text-cyan py-3 password-input"
+                            placeholder="••••••••" required>
                         <button type="button" class="password-toggle" data-target="access-key">
-                            <svg class="eye-open"><use xlink:href="#icon-eye"></use></svg>
-                            <svg class="eye-closed d-none"><use xlink:href="#icon-eye-off"></use></svg>
+                            <svg class="eye-open">
+                                <use xlink:href="#icon-eye"></use>
+                            </svg>
+                            <svg class="eye-closed d-none">
+                                <use xlink:href="#icon-eye-off"></use>
+                            </svg>
                         </button>
                     </div>
                 </div>
                 <div class="mb-4">
                     <label class="form-label text-cyan small fw-bold">CONFIRM ACCESS KEY</label>
                     <div class="password-field-group">
-                        <input type="password" id="confirm-key" class="form-control bg-transparent border-cyan-half rounded-0 text-cyan py-3 password-input" placeholder="••••••••" required>
+                        <input type="password" id="confirm-key"
+                            class="form-control bg-transparent border-cyan-half rounded-0 text-cyan py-3 password-input"
+                            placeholder="••••••••" required>
                         <button type="button" class="password-toggle" data-target="confirm-key">
-                            <svg class="eye-open"><use xlink:href="#icon-eye"></use></svg>
-                            <svg class="eye-closed d-none"><use xlink:href="#icon-eye-off"></use></svg>
+                            <svg class="eye-open">
+                                <use xlink:href="#icon-eye"></use>
+                            </svg>
+                            <svg class="eye-closed d-none">
+                                <use xlink:href="#icon-eye-off"></use>
+                            </svg>
                         </button>
                     </div>
                 </div>
 
                 <div class="auth-utils">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input bg-transparent border-cyan-half" id="terms" required>
-                        <label class="form-check-label small text-cyan opacity-75" for="terms">I agree to the <a href="#" class="text-cyan text-decoration-none">Terms</a></label>
+                        <input type="checkbox" class="form-check-input bg-transparent border-cyan-half" id="terms"
+                            required>
+                        <label class="form-check-label small text-cyan opacity-75" for="terms">I agree to the <a
+                                href="#" class="text-cyan text-decoration-none">Terms</a></label>
                     </div>
                     <a href="#" class="text-cyan small text-decoration-none opacity-50">Need help?</a>
                 </div>
 
-                <button type="submit" class="btn-scriptflow w-100 py-3">REQUEST ACCESS</button>
-                
+                <button type="submit" class="btn-scriptflow w-100 py-3">CREATE</button>
+
                 <a href="login.html" class="auth-footer-link">
                     Already have an account? <span>Sign In</span>
                 </a>
@@ -156,5 +188,14 @@
             });
         });
     </script>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+        </svg>
+    </button>
 </body>
+
 </html>

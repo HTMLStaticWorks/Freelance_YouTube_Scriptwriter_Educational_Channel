@@ -25,10 +25,10 @@
     <div class="dashboard-layout">
         <!-- Sidebar -->
         <aside class="dashboard-sidebar">
-            <div class="brand-logo-wrap mb-4">
+            <a href="index.html" class="brand-logo-wrap mb-4 text-decoration-none">
                 <img src="assets/images/logo.svg" alt="ScriptFlow Logo" width="40" height="40" class="me-2">
                 <span class="text-cyan h5 mb-0 fw-bold">ScriptFlow</span>
-            </div>
+            </a>
 
             <ul class="sidebar-nav">
                 <li><a href="dashboard.html" class="sidebar-link">
@@ -70,7 +70,7 @@
 
             <div class="sidebar-user mt-auto">
                 <div class="user-avatar">AD</div>
-                <div class="user-info d-none d-xl-block">
+                <div class="user-info">
                     <p class="small fw-bold mb-0">Admin User</p>
                     <a href="index.html" class="text-muted small text-decoration-none hover-cyan">Sign Out</a>
                 </div>
@@ -89,7 +89,7 @@
                     <button id="theme-toggle" class="btn btn-link text-cyan p-0 me-3" title="Toggle Theme"></button>
                     <div class="dropdown me-3">
                         <button class="btn btn-outline-cyan dropdown-toggle px-3 small fw-bold text-uppercase"
-                            type="button" data-bs-toggle="dropdown">Last 30 Days</button>
+                            type="button" data-bs-toggle="dropdown">FILTER</button>
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li><a class="dropdown-item" href="#">Last 7 Days</a></li>
                             <li><a class="dropdown-item" href="#">Last 90 Days</a></li>
@@ -194,6 +194,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/dashboard-charts.js"></script>
     <script src="assets/js/dashboard.js"></script>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+        </svg>
+    </button>
 </body>
 
 </html>

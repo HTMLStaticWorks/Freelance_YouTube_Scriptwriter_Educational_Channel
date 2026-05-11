@@ -49,8 +49,13 @@ function initMobileMenu() {
         document.body.classList.remove('menu-open');
     }
 
+    const closeBtn = document.querySelector('.offcanvas-close-sf');
+    
     toggle.addEventListener('click', toggleMenu);
     backdrop.addEventListener('click', closeMenu);
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeMenu);
+    }
 
     links.forEach(link => {
         link.addEventListener('click', closeMenu);
@@ -143,3 +148,24 @@ function initToggles() {
         });
     });
 }
+
+// Back to Top functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const backToTopBtn = document.querySelector('.back-to-top');
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
