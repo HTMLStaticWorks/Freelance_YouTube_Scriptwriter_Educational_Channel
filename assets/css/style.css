@@ -61,11 +61,11 @@ body.light-mode .opacity-40 {
 }
 
 /* Force dark text in light mode for common elements */
-body.light-mode p:not(.text-cyan):not(.bg-obsidian *):not(.image-overlay-card *),
-body.light-mode span:not(.text-cyan):not(.badge):not(.bg-obsidian *):not(.image-overlay-card *),
-body.light-mode li:not(.text-cyan):not(.bg-obsidian *):not(.image-overlay-card *),
+body.light-mode p:not(.text-cyan):not(.bg-obsidian *):not(.image-overlay-card *):not(.hero-subtitle):not(.library-content *),
+body.light-mode span:not(.text-cyan):not(.badge):not(.bg-obsidian *):not(.image-overlay-card *):not(.library-content *),
+body.light-mode li:not(.text-cyan):not(.bg-obsidian *):not(.image-overlay-card *):not(.library-content *),
 body.light-mode .scriptflow-card p,
-body.light-mode .hero-subtitle {
+body.light-mode .inner-page-header .hero-subtitle {
     color: var(--text-main) !important;
 }
 
@@ -545,6 +545,11 @@ body.light-mode .text-outline {
     /* Increased from 0.7 */
     font-weight: 400;
     line-height: 1.8;
+}
+
+.hero .hero-subtitle,
+.home-2-hero .hero-subtitle {
+    color: #ffffff !important;
 }
 
 /* Timeline / Retention Section */
